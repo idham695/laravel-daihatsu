@@ -1,0 +1,154 @@
+html, body{
+  background-color: #dddddd;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* navbar */
+.navbar {
+  box-shadow: 0 2px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+.navbar-brand{
+    margin-left: 30px;
+}
+.navbar-brand img {
+    width: 200px;
+    margin-top: 6px;
+}
+.subsidebar a:hover{
+  text-decoration: none;
+  color: #dddd;
+}
+.link{
+  color: black;
+  padding-top: 10px;
+  height: 100%;
+  display: inline-block;
+}
+.nav a:hover{
+  color: #dddd;
+}
+
+.sidenav{
+    height: 100%;
+    background-color: white;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+  }
+.sidenav > .insidenav {
+  margin-top: 10px;
+}
+.main {
+    cursor: pointer;
+    font-size: 30px;
+    color: #bbb;
+    margin-top: -2px;
+    text-decoration: none;
+}
+.main :hover{
+  color: #dddd;
+} 
+  .insidenav{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .closebtn{
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: black;
+    cursor: pointer;
+  }
+
+/* product */
+.card {
+  margin-top: 20px;
+}
+/* footer */
+.footer {
+  background-color: #b0afac;
+  margin-top: 60px;
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+/* utility */
+.utility{
+  opacity: 0.3;
+}
+.icon {
+  margin-top: 30px;
+  position: fixed;
+  right: 10vw;
+  z-index: 10;
+  bottom: 0;
+}
+.icon img {
+  width: 60px;
+}
+.feather {
+  width: 30px;
+  height: 30px;
+  color: #bbbbbb;
+  cursor: pointer;
+  margin-top: 6px;
+}
+.feather:not(:last-child) {
+  margin-right: 10px;
+}
+.iconsidebar{
+  position: absolute;
+  right: 40px;
+  cursor: pointer;
+}
+.subsidebar{
+  padding-left: 80px;
+  cursor: pointer;
+  color: black;
+  display: none;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .navbar-brand {
+    margin-left: 15px;
+  }
+  .sidenav a {
+    font-size: 14px;
+  }
+  .icon{
+    right: 3vw;
+  }
+  .navbar-brand img {
+    width: 150px;
+  }
+  .main {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  .feather {
+    margin-bottom: -3px;
+    margin-right: -10px;
+  }
+  .footer {
+    font-size: 14px;
+  }
+}
