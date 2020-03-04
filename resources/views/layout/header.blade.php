@@ -10,4 +10,5 @@
     <link rel="stylesheet" href="{{ URL::asset('fontawesome/css/solid.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('fontawesome/css/brands.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
+    @yield('style')
 <body>
