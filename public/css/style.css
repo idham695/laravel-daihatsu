@@ -23,8 +23,11 @@ html, body{
 .link{
   color: black;
   padding-top: 10px;
+  margin: 0;
   height: 100%;
-  display: inline-block;
+  display: block;
+  font-size: 14px;
+  transition: 0.3s;
 }
 .nav a:hover{
   color: #dddd;
@@ -40,9 +43,7 @@ html, body{
     overflow-x: hidden;
     padding-top: 60px;
   }
-.sidenav > .insidenav {
-  margin-top: 10px;
-}
+
 .main {
     cursor: pointer;
     font-size: 30px;
@@ -93,12 +94,12 @@ html, body{
 .icon {
   margin-top: 30px;
   position: fixed;
-  right: 10vw;
+  right: 9vw;
   z-index: 10;
   bottom: 0;
 }
 .icon img {
-  width: 60px;
+  width: 50px;
 }
 .feather {
   width: 30px;
@@ -116,7 +117,7 @@ html, body{
   cursor: pointer;
 }
 .subsidebar{
-  padding-left: 80px;
+  padding-left: 32px;
   cursor: pointer;
   color: black;
   display: none;
