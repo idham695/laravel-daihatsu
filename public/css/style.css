@@ -19,7 +19,6 @@ html, body{
 }
 .subsidebar a:hover{
   text-decoration: none;
-  color: #dddd;
 }
 .link{
   color: black;
@@ -29,8 +28,23 @@ html, body{
   font-size: 14px;
   transition: 0.3s;
 }
+.link::after{
+  height: 1px;
+  margin-top: 10px;
+  content: '';
+  display: block;
+  width: 250px;
+  background-color: #545454;
+}
+.link:last-child::after{
+  height: 1px;
+  margin-top: 10px;
+  content: '';
+  display: none;
+  width: 250px;
+}
 .nav a:hover{
-  color: #dddd;
+  filter: brightness('80%');
 }
 
 .sidenav{
@@ -62,6 +76,21 @@ html, body{
     display: block;
     text-align: left;
     cursor: pointer;
+  }
+  .insidenav::after{
+    height: 1px;
+    margin-top: 10px;
+    content: '';
+    display: block;
+    width: 250px;
+    background-color: black;
+  }
+  .insidenav:last-child::after{
+    height: 1px;
+    margin-top: 10px;
+    content: '';
+    display: none;
+    width: 250px;
   }
 
   .closebtn{
@@ -123,10 +152,11 @@ html, body{
   display: none;
   text-decoration: none;
   transition: 0.3s;
+  background-color: #dddd;
+  padding-bottom: 10px;
 }
 .back{
   font-size: 40px;
-
   position: absolute;
   color: black;
 }
