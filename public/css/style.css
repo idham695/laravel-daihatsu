@@ -108,6 +108,9 @@ html, body{
 .card {
   margin-top: 20px;
 }
+.card-img-top {
+  height: 300px;
+}
 /* footer */
 .footer {
   background-color: #b0afac;
