@@ -15,10 +15,8 @@ class CreateTypeProductTable extends Migration
     {
         Schema::create('type_product', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_product')->index('id_product_foreign');
-            $table->string('type', 50);
-            $table->string('price', 10);
-            $table->text('desc', 65536);
+            $table->integer('product_id')->unsigned();
+            $table->integer('type_id')->unsigned();
             $table->timestamps();
         });
     }

@@ -17,8 +17,8 @@ class CreateProductTable extends Migration
             $table->bigIncrements('id');
             $table->string("name", 255);
             $table->string("image", 255);
-            $table->string("min_price", 10);
-            $table->string("max_price", 10);
+            $table->double("min_price");
+            $table->double("max_price");
             $table->timestamps();
         });
     }

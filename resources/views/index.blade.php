@@ -5,60 +5,17 @@
     <div class="product" id="product">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/ayla.jpg" alt="" class="card-img-top">
+                    @foreach($product as $p)
+                    <div class="col-md-4 d-flex col-sm-12">
+                        <div class="card flex-fill">
+                            <img src="img/{{$p->image}}" alt="" class="card-img-top">
                             <div class="card-body">
-                                <h5 class="card-title">New Ayla</h5>
-                                <p class="card-text">Rp. 116.700,000</p>
+                                <h5 class="card-title">{{$p->name}}</h5>
+                                <p class="card-text">Rp. {{$p->min_price}} - Rp. {{$p->max_price}} Juta</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/xenia.jpeg" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">New Ayla</h5>
-                                <p class="card-text">Rp. 116.700,000</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/ayla.jpg" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">New Ayla</h5>
-                                <p class="card-text">Rp. 116.700,000</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/ayla.jpg" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">New Ayla</h5>
-                                <p class="card-text">Rp. 116.700,000</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/ayla.jpg" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">New Ayla</h5>
-                                <p class="card-text">Rp. 116.700,000</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/ayla.jpg" alt="" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">New Ayla</h5>
-                                <p class="card-text">Rp. 116.700,000</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

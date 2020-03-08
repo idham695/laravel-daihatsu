@@ -103,16 +103,18 @@ html, body{
     color: black;
     cursor: pointer;
   }
+  .id{
+    display: block;
+    transition: 0.3s;
+  }
 
 /* product */
 .card {
   margin-top: 20px;
 }
-.card-img-top {
-  max-width: 400px;
-  height: 300px;
-  margin-top: 10px;
-}
+/* .card-img-top {
+  height: 250px;
+} */
 /* footer */
 .footer {
   background-color: #b0afac;

@@ -17,19 +17,19 @@ function closeNav() {
 }
 
 
-function openSub(){
+function openSub(id){
     element.classList.add("utility");
-    if(document.getElementById("icon").className=="fas fa-plus"){
-        document.getElementById("icon").className = "fas fa-minus";
-        document.getElementById("subsidebar").style.display="block";
-        document.getElementById("subsidebar").style.transition="0.3s";
-        document.getElementById("subsidebar").style.marginBottom="10px";
+    if(document.getElementById("icon" + id).className=="fas fa-plus"){
+        document.getElementById("icon" + id).className = "fas fa-minus";
+        document.getElementById('subsidebar' + id).style.display="block";
+        document.getElementById('subsidebar' + id).style.transition="0.3s";
+        document.getElementById('subsidebar' + id).style.marginBottom="10px";
     }
     else{
-        document.getElementById("icon").className = "fas fa-plus";
-        document.getElementById("subsidebar").style.display="none";
-        document.getElementById("subsidebar").style.transition="0.3s";
-        document.getElementById("subsidebar").style.marginBottom="0";
+        document.getElementById("icon" + id).className = "fas fa-plus";
+        document.getElementById('subsidebar' + id).style.display="none";
+        document.getElementById('subsidebar' + id).style.transition="0.3s";
+        document.getElementById('subsidebar' + id).style.marginBottom="0";
     }
     
 }
