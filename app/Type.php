@@ -11,8 +11,8 @@ class Type extends Model
     protected $fillable = array('id_product','type','price','desc');
 
 
-    // public function product()
-    // {
-    //     return $this->belongsTo('App/Product','id_product');
-    // }
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

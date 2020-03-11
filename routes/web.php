@@ -11,11 +11,11 @@
 |
 */
 
-Route::resource('/', 'TypeController');
+Route::resource('/index', 'TypeController');
 
-// Route::get('/search', function () {
-//     return view('search');
-// });
-// Route::get('/map', function () {
-//     return view('map');
-// });
+Route::get('/search', function () {
+    return view('search');
+});
+Route::get('/map', function () {
+    return view('map');
+});

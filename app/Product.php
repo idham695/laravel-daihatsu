@@ -10,7 +10,7 @@ class Product extends Model
     protected $fillable = array('name', 'price', 'image','min_price','max_price');
 
 
-    // public function product(){
-    //     return $this->hasMany('App/Type','id_product');
-    // }
+    public function type(){
+        return $this->hasMany(Type::class,'id_product');
+    }
 }

@@ -15,8 +15,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $type =Type::join('product', 'type.id_product', '=', 'product.id')->select('type.*', 'product.name')->get();
-        $product = Product::all();
+        $type = Product::with('type')->orderBy('id','desc')->get();
+        $product = Product::orderBy('id')->get();
 
         // return response()->json([
         //     'error' => false,
@@ -64,6 +64,10 @@ class TypeController extends Controller
     {
         $type = Type::find($id);
 
+        if(!$type) {
+            abort(404);
+        }
+
         return response()->json([
             'error' => false,
             'type' => $type
@@ -90,7 +94,20 @@ class TypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $type = Type::find($id);
+        
+        if(!$type) {
+            abort(404);
+        }
+
+        $type->fill($input);
+        $type->save();
+
+        return response()->json($type, 200);
+
+
     }
 
     /**
@@ -101,6 +118,17 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $type = Type::find($id);
+        
+        if(!$type) {
+            abort(404);
+        }
+
+        $type->delete();
+
+        $message = ['message' => 'deleted successfully', 'type_id' => $id];
+
+        return response()->json($message, 200);
+
     }
 }
