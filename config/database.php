@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL = parse_url(getenv("postgres://zviyrwhnaskxfo:2e6bc631a1f57773315bb18f7db476426e8dc89bd3c99e9381434dd23e54b69e@ec2-3-91-112-166.compute-1.amazonaws.com:5432/d26qfetv1tm40h"));
+$DATABASE_URL ="postgres://zviyrwhnaskxfo:2e6bc631a1f57773315bb18f7db476426e8dc89bd3c99e9381434dd23e54b69e@ec2-3-91-112-166.compute-1.amazonaws.com:5432/d26qfetv1tm40h";
 
 return [
 
@@ -69,11 +69,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => $DATABASE_URL,
-            'host' => $DATABASE_URL["host"],
-            'port' => $DATABASE_URL["port"],
-            'database' => ltrim($DATABASE_URL["path"], "/"),
-            'username' => $DATABASE_URL["user"],
-            'password' => $DATABASE_URL["pass"],
+            'host' => parse_url(getenv($DATABASE_URL)) ["host"],
+            'port' => parse_url(getenv($DATABASE_URL)) ["port"],
+            'database' => substr(parse_url(getenv($DATABASE_URL)) ["path"], 1),
+            'username' => parse_url(getenv($DATABASE_URL)) ["user"],
+            'password' => parse_url(getenv($DATABASE_URL)) ["pass"],
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
