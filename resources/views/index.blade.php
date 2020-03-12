@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     @foreach($product as $p)
-                    <div class="col-md-4 d-flex col-sm-12">
+                    <div class="col-md-4 d-flex">
                         <div class="card flex-fill product">
                             <img src="img/{{$p->image}}" alt="" class="card-img-top">
                             <div class="card-body">

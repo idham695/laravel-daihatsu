@@ -112,6 +112,7 @@ html, body{
 .card {
   margin-top: 30px;
   transition: transform .2s;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.5);
 }
 .card:hover {
   transform: scale(1.1);
@@ -182,9 +183,6 @@ a:hover{
   .navbar-brand {
     margin-left: 15px;
   }
-  .sidenav a {
-    font-size: 14px;
-  }
   .icon{
     right: 3vw;
   }
@@ -201,5 +199,15 @@ a:hover{
   }
   .footer {
     font-size: 14px;
+  }
+  .link{
+    font-size: 12px;
+  }
+  .insidenav{
+    font-size: 12px;
+  }
+
+  .card:hover{
+    transform: scale(1);
   }
 }
