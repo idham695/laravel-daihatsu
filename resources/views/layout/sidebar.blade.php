@@ -6,7 +6,7 @@
         </div>
             <div class="subsidebar" id='subsidebar{{$item->id}}'>
                 @foreach($item->type as $typeItem)
-                <a href="#" class="link"> {{$item->name}} {{ $typeItem->type }}</a>
+                <a href="/type/{{$typeItem->id}}" class="link"> {{$item->name}} {{ $typeItem->type }}</a>
                 @endforeach
             </div>
         @endforeach

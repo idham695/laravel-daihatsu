@@ -11,7 +11,15 @@
 |
 */
 
-Route::resource('/index', 'TypeController');
+Route::get('/index', 'TypeController@index');
+
+Route::resource('/type', 'TypeController')->except([
+    'index'
+]);
+
+Route::resource('/product', 'ProductController')->except([
+    'index'
+]);
 
 Route::get('/search', function () {
     return view('search');

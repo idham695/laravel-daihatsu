@@ -12,6 +12,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$p->name}}</h5>
                                 <p class="card-text">Rp. {{$p->min_price}} - Rp. {{$p->max_price}} Juta</p>
+                                <a href="/product/{{$p->id}}" class="btn btn-primary">View Product</a>
                             </div>
                         </div>
                     </div>

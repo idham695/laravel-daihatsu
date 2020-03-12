@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Type;
-use App\Product;
 
-class ProductController extends Controller
+class Product_Image_InteriorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -45,13 +43,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        $type = Product::with('type')->orderBy('id','desc')->get();
-        $product = Product::orderBy('id')->get();
-
-
-        return view('product.show', compact('type','product'));
+        //
     }
 
     /**
@@ -62,7 +56,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('product.edit', compact('product'));
+        //
     }
 
     /**

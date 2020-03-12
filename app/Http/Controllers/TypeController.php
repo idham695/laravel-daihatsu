@@ -60,18 +60,22 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Type $type)
     {
-        $type = Type::find($id);
+        $type = Product::with('type')->orderBy('id','desc')->get();
+        $product = Product::orderBy('id')->get();
+        // $type = Type::find($id);
 
-        if(!$type) {
-            abort(404);
-        }
+        // if(!$type) {
+        //     abort(404);
+        // }
 
-        return response()->json([
-            'error' => false,
-            'type' => $type
-        ], 200);
+        // return response()->json([
+        //     'error' => false,
+        //     'type' => $type
+        // ], 200);
+
+        return view('type.show', compact('type','product'));
     }
 
     /**
@@ -80,9 +84,9 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Type $type)
     {
-        //
+        return view('type.edit', compact('type'));
     }
 
     /**
@@ -92,20 +96,20 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Type $type)
     {
         $input = $request->all();
 
-        $type = Type::find($id);
+        // $type = Type::find($id);
         
-        if(!$type) {
-            abort(404);
-        }
+        // if(!$type) {
+        //     abort(404);
+        // }
 
-        $type->fill($input);
-        $type->save();
+        // $type->fill($input);
+        // $type->save();
 
-        return response()->json($type, 200);
+        // return response()->json($type, 200);
 
 
     }
