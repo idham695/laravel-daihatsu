@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/index', 'TypeController@index');
+Route::get('/', 'TypeController@index');
 
 Route::resource('/type', 'TypeController')->except([
     'index'

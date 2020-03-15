@@ -9,4 +9,5 @@
                 </div>
             </div>
 </nav>
+<div id="container" onclick="closeNav()">
 @include('layout/footer')

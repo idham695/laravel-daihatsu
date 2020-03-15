@@ -60,8 +60,9 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Type $type)
+    public function show($id)
     {
+        $types = Type::with('product')->find($id);
         $type = Product::with('type')->orderBy('id','desc')->get();
         $product = Product::orderBy('id')->get();
         // $type = Type::find($id);
@@ -75,7 +76,7 @@ class TypeController extends Controller
         //     'type' => $type
         // ], 200);
 
-        return view('type.show', compact('type','product'));
+        return view('type.show', compact('type','product','types'));
     }
 
     /**

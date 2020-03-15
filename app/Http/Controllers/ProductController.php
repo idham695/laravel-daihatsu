@@ -45,13 +45,25 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
+        $products = Product::with('type')->find($id);
         $type = Product::with('type')->orderBy('id','desc')->get();
         $product = Product::orderBy('id')->get();
 
+         // if(!$type) {
+        //     abort(404);
+        // }
 
-        return view('product.show', compact('type','product'));
+        // return response()->json([
+        //     'error' => false,
+        //     'type' => $type
+        // ], 200);
+
+        
+
+
+        return view('product.show', compact('product','type','products'));
     }
 
     /**
