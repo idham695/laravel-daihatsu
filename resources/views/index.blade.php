@@ -11,7 +11,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$p->name}}</h5>
                                 <p class="card-text">Rp. {{$p->min_price}}0.000 - Rp. {{$p->max_price}}0.000</p>
-                                <a href="/product/{{$p->id}}" class="btn btn-primary">View Product</a>
+                                <a href="/product/{{$p->id}}" class="btn btn-primary u">View Product</a>
                             </div>
                         </div>
                     </div>
@@ -19,16 +19,16 @@
                 </div>
                 <div class="row promo">
                     <div class="col-6 col-sm-3 ">
-                    <a href="https://api.whatsapp.com/send?phone=+628881260028" class="info">Promo Menarik</a>
+                    <a href="https://api.whatsapp.com/send?phone=+628881260028" class="info u">Promo Menarik</a>
                     </div>
                     <div class="col-6 col-sm-3">
-                    <a href="https://api.whatsapp.com/send?phone=+628881260028" class="info">Informasi Harga</a>
+                    <a href="https://api.whatsapp.com/send?phone=+628881260028" class="info u">Informasi Harga</a>
                     </div>
                     <div class="col-6 col-sm-3">
-                    <a href="https://api.whatsapp.com/send?phone=+628881260028"  class="info">Informasi DP</a>
+                    <a href="https://api.whatsapp.com/send?phone=+628881260028"  class="info u">Informasi DP</a>
                     </div>
                     <div class="col-6 col-sm-3">
-                    <a href="https://api.whatsapp.com/send?phone=+628881260028"  class="info">Informasi Angsuran</a>
+                    <a href="https://api.whatsapp.com/send?phone=+628881260028"  class="info u">Informasi Angsuran</a>
                     </div>
                 </div>
             </div>

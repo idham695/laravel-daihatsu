@@ -43,7 +43,12 @@ html, body{
   display: none;
   width: 250px;
 }
-
+.disabled{
+  pointer-events: none;
+}
+a:hover{
+  color: currentColor;
+}
 .sidenav{
     height: 100%;
     background-color: white;
@@ -125,9 +130,13 @@ html, body{
 .informasi h1{
   font-size: 30px;
 }
-.image{
-  width: 400px;
+.a{
+  text-align: justify;
+  font-size: 14px;
+  width: 90%;
 }
+
+
 /* footer */
 .footer {
   background-color: #b0afac;
@@ -138,7 +147,7 @@ html, body{
 
 /* utility */
 .utility{
-  opacity: 0.2;
+  opacity: 0.1;
 }
 .icon {
   margin-top: 30px;
@@ -231,9 +240,16 @@ a:hover{
     margin-bottom: 100px;
   }
   .informasi{
-    margin-top: 50px;
+    margin-top: 10px;
   }
   .informasi h1{
     font-size: 22px;
+  }
+  .a{
+    font-size: 12px;
+    width: 100%;
+  }
+  .col-6{
+    padding-top: 20px;
   }
 }

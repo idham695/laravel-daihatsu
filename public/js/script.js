@@ -1,4 +1,5 @@
 var element = document.getElementById("container");
+var nav = document.getElementsByClassName("u");
 
 function openNav(){
     element.classList.add("utility");
@@ -6,6 +7,7 @@ function openNav(){
     document.getElementById("sidenav").style.transition = "0.3s";
     document.getElementById("sidenav").style.width = "250px";
     document.getElementById("sidenav").style.left = "0";
+    nav.classList.add("disabled");
 }
 
 function closeNav() {
@@ -14,6 +16,8 @@ function closeNav() {
     document.getElementById("sidenav").style.transition = "0.3s";
     document.getElementById("main").style.marginLeft = "0";
     document.getElementById("sidenav").style.left = "-250px";
+    nav.classList.remove("disabled");
+
 }
 
 

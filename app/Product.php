@@ -13,4 +13,10 @@ class Product extends Model
     public function type(){
         return $this->hasMany(Type::class,'id_product');
     }
+    public function plus(){
+        return $this->hasMany(Plus_Product::class,'id_product');
+    }
+    public function minus(){
+        return $this->hasMany(Minus_Product::class,'id_product');
+    }
 }
