@@ -16,7 +16,7 @@
     margin-left: 65px;
     position: absolute;
     color: #fff;
-    font-size: 40px;
+    font-size: 44px;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
 }
 .banner-price{
@@ -40,7 +40,7 @@
     filter: contrast(80%);
 }
 .qta{
-    font-size: 24px;
+    font-size: 28px;
     color: white;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
     display: block;
@@ -64,12 +64,15 @@
 }
 .bg-hijau{
     background-color: rgba(0, 255, 0, 0.1);
+    height: 250px;
 }
 .bg-merah{
     background-color: rgba(255, 0, 0, 0.1);
+    height: 250px;
 }
 ul{
     list-style: none;
+    list-style-position: outside;
 }
 .hijau::before{
     content: "\2022";
@@ -77,7 +80,7 @@ ul{
     font-weight: bold;
     display: inline-block; 
     width: 1em;
-    margin-left: -2.5em;
+    margin-left: -1em;
 }
 .merah::before{
     content: "\2022";
@@ -85,7 +88,13 @@ ul{
     font-weight: bold;
     display: inline-block; 
     width: 1em;
-    margin-left: -2.5em;
+    margin-left: -1em;
+}
+.hijau, .merah{
+    font-size: 16px;
+    font-weight: 200;
+    text-align: justify;
+    margin-left: -20px;
 }
 @media screen and (max-width:600px){
     .search{
@@ -126,5 +135,11 @@ ul{
     }
     .kelebihan h3{
         font-size: 18px;
+    }
+    .plus-minus{
+        margin: 0;
+    }
+    .bg-hijau, .bg-merah{
+        margin-top: 20px;
     }
 }

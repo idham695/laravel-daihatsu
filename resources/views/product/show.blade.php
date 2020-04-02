@@ -37,19 +37,17 @@
                 <div class="col-md-4 bg-hijau">
                     <h3>Kelebihan {{$products->name}} </h3>
                     <ul>
-                        <li class="hijau">hello</li>
-                        <li class="hijau">hello</li>
-                        <li class="hijau">hello</li>
-                        <li class="hijau">hello</li>
+                        @foreach($products->plus as $kelebihan)
+                        <li class="hijau">{{$kelebihan->kelebihan}}</li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="col-md-4 offset-md-1 bg-merah">
                     <h3>Kekurangan {{$products->name}}</h3>
                     <ul>
-                        <li class="merah">hi</li>
-                        <li class="merah">hi</li>
-                        <li class="merah">hi</li>
-                        <li class="merah">hi</li>
+                        @foreach($products->minus as $kekurangan)
+                        <li class="merah">{{$kekurangan->kekurangan}}</li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

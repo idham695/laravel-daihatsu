@@ -1,5 +1,6 @@
 var element = document.getElementById("container");
 var nav = document.getElementsByClassName("u");
+var card = document.getElementsByClassName('card');
 
 function openNav(){
     element.classList.add("utility");
@@ -7,7 +8,12 @@ function openNav(){
     document.getElementById("sidenav").style.transition = "0.3s";
     document.getElementById("sidenav").style.width = "250px";
     document.getElementById("sidenav").style.left = "0";
-    nav.classList.add("disabled");
+    for(var i = 0; i < nav.length; i++){
+        nav[i].classList.add("disabled");
+    }
+    for(var i = 0; i < card.length; i++){
+        card[i].classList.add("disabled");
+    }
 }
 
 function closeNav() {
@@ -16,8 +22,12 @@ function closeNav() {
     document.getElementById("sidenav").style.transition = "0.3s";
     document.getElementById("main").style.marginLeft = "0";
     document.getElementById("sidenav").style.left = "-250px";
-    nav.classList.remove("disabled");
-
+    for(var i = 0; i < nav.length; i++){
+        nav[i].classList.remove("disabled");
+    }
+    for(var i = 0; i < card.length; i++){
+        card[i].classList.remove("disabled");
+    }
 }
 
 

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Type;
-use App\Product;
+use App\Minus_Product;
 
-class TypeController extends Controller
+class Minus_Product_Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,16 +14,12 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $type = Product::with('type')->orderBy('id','desc')->get();
-        $product = Product::orderBy('id')->get();
+        $minus = Minus_Product::all();
 
-        // return response()->json([
-        //     'error' => false,
-        //     'type' => $type,
-        //     'product' => $product,
-        //     'csrf_token' => csrf_token()
-        // ], 200);
-        return view('index', compact('type','product'));
+        return response()->json([
+            'error' => false,
+            'minus' => $minus
+        ], 200);
     }
 
     /**
@@ -45,13 +40,12 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        $type = Type::create($request->all());
+        $minus = Minus_Product::create($request->all());
 
         return response()->json([
             'error' => false,
-            'type' => $type,
+            'plus' => $minus
         ], 200);
-        //
     }
 
     /**
@@ -62,21 +56,7 @@ class TypeController extends Controller
      */
     public function show($id)
     {
-        $types = Type::with('product','plus','minus')->find($id);
-        $type = Product::with('type')->orderBy('id','desc')->get();
-        $product = Product::orderBy('id')->get();
-        // $type = Type::find($id);
-
-        // if(!$type) {
-        //     abort(404);
-        // }
-
-        // return response()->json([
-        //     'error' => false,
-        //     'type' => $type
-        // ], 200);
-
-        return view('type.show', compact('type','product','types'));
+        //
     }
 
     /**
@@ -85,9 +65,9 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Type $type)
+    public function edit($id)
     {
-        return view('type.edit', compact('type'));
+        
     }
 
     /**
@@ -97,22 +77,20 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 
-        // $type = Type::find($id);
+        $minus = Minus_Product::find($id);
         
-        // if(!$type) {
-        //     abort(404);
-        // }
+        if(!$minus) {
+            abort(404);
+        }
 
-        // $type->fill($input);
-        // $type->save();
+        $minus->fill($input);
+        $minus->save();
 
-        // return response()->json($type, 200);
-
-
+        return response()->json($minus, 200);
     }
 
     /**
@@ -123,17 +101,16 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        $type = Type::find($id);
+        $minus = Minus_Product::find($id);
         
-        if(!$type) {
+        if(!$minus) {
             abort(404);
         }
 
-        $type->delete();
+        $minus->delete();
 
-        $message = ['message' => 'deleted successfully', 'type_id' => $id];
+        $message = ['message' => 'deleted succesfully', 'Minus_product_id' => $id];
 
         return response()->json($message, 200);
-
     }
 }

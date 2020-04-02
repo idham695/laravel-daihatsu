@@ -10,11 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/csrf', 'CsrfController@index');
+
 
 Route::get('/', 'TypeController@index');
 
 Route::resource('/type', 'TypeController')->except([
     'index'
+]);
+Route::resource('/plus', 'Plus_Product_Controller')->except([
+    'show','create','edit'
+]);
+Route::resource('/minus', 'Minus_Product_Controller')->except([
+    'show','create','edit'
 ]);
 
 Route::resource('/product', 'ProductController')->except([
