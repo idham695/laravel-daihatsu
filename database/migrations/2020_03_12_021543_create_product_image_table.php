@@ -19,6 +19,7 @@ class CreateProductImageTable extends Migration
             $table->foreign('id_product')->references('id')->on('product')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
+            $table->string('name', '50');
             $table->string('image', '255');
             $table->timestamps();
         });

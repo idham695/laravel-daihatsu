@@ -12,7 +12,7 @@
         </div> -->
         <div class="banner-button">
                     <a href="https://api.whatsapp.com/send?phone=+628881260028" class="qta u">Promo Menarik</a>
-                    <a href="" class="qta u">Detail Gambar</a>
+                    <a href="/product/image/{{$products->id}}" class="qta u">Detail Gambar</a>
         </div>
     </div>
 </div>
@@ -25,6 +25,7 @@
             <h1>Informasi Terkait {{$products->name}}</h1>
             <p class="a">
                 {{$products->desc}}
+                {{$c}}
             </p>
         </div>
     </div>
@@ -42,15 +43,65 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="col-md-4 offset-md-1 bg-merah">
+                <div class="col-md-6 offset-md-1 color">
+                    <h3>Warna Daihatsu {{$products->name}}</h3>
+                    <p>{{$products->name}} tersedia dalam  @foreach($c as $color){{$color->color_count}} @endforeach  warna yang berbeda yaitu @foreach($products->color as $color){{$color->color_name}}@endforeach </p>
+                        <div class="product-color">
+                            <div class="d-flex flex-row flex-nowrap">
+                                <div class="colorbox">
+                                    @foreach($products->color as $color)
+                                    <div class="dflex flex-column">
+                                        <div class="color-product" style="background-color: {{$color->color}};">
+                                            </div>
+                                            <p class="name-color">{{$color->color_name}}</p>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- <div class="col-md-4 offset-md-1 bg-merah">
                     <h3>Kekurangan {{$products->name}}</h3>
                     <ul>
                         @foreach($products->minus as $kekurangan)
                         <li class="merah">{{$kekurangan->kekurangan}}</li>
                         @endforeach
                     </ul>
-                </div>
+                </div> -->
             </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1 class="type-price">Harga dan Promo Type {{$products->name}}</h1>
+    <div class="product-price">
+        <div class="d-flex flex-row flex-nowrap">
+                @foreach($products->type as $type)
+                <div class="catalog">
+                    <div class="catalog-body">
+                            <p class="type">{{$type->type}} | Rp. {{$type->price}} juta</p>
+                        @foreach($type->down as $down)
+                        <div class="d-flex justify-content-between">
+                            <p class="column">DP(Mulai Dari)</p>
+                            <p class="price">Rp. {{$down->price_min}} juta</p>
+                        </div>
+                        @endforeach
+                        @foreach($down->credit as $credit)
+                        <div class="d-flex justify-content-between">
+                            <p class="column">Angsuran</p>
+                            <p class="price">Rp. {{$credit->price}} juta</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="column">Tenor</div>
+                            <p class="price">{{$credit->tenor}} months</p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                        <a href="https://api.whatsapp.com/send?phone=+628881260028" class="text-danger">Promo Menarik</a>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endforeach
         </div>
     </div>
 </div>
@@ -58,77 +109,3 @@
 @include('layout/footercomp')
 @include('layout/sidebar')
 @include('layout/footer')
-
-<!-- Carousel DP -->
-<!-- <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                         <div class="container">
-                            <div class="row">
-                                    <div class="col-4 col-md-4">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>Hello</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 col-md-4">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>Hello</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 col-md-4">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>Hello</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                         <div class="container">
-                            <div class="row">
-                                    <div class="col-4 col-md-4">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>Hello</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 col-md-4">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>Hello</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4 col-md-4">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p>Hello</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div> -->

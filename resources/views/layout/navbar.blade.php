@@ -1,5 +1,5 @@
 @include('layout/header')
-<nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+<nav class="navbar navbar-expand-lg navbar-light" id="navbar" >
             <div class="container">
                 <div onclick="openNav()" id="main" class="main">&#9776;</div>
                 <a class="navbar-brand u" href="/"><img src="{{ URL::asset('img/unnamed.png') }}" alt=""></a>

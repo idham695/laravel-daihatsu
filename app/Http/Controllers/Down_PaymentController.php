@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Down_Payment;
 
 class Down_PaymentController extends Controller
 {
@@ -13,7 +14,12 @@ class Down_PaymentController extends Controller
      */
     public function index()
     {
-        //
+        $down = Down_Payment::with('credit','type')->orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'down' => $down
+        ], 200);
     }
 
     /**
@@ -34,7 +40,12 @@ class Down_PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $down = Down_Payment::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'down' => $down
+        ], 200);
     }
 
     /**
@@ -68,7 +79,18 @@ class Down_PaymentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $input = $request->all();
+
+       $down = Down_Payment::find($id);
+        
+        if(!$down) {
+            abort(404);
+        }
+
+       $down->fill($input);
+       $down->save();
+
+        return response()->json($down, 200);
     }
 
     /**
@@ -79,6 +101,16 @@ class Down_PaymentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $down = Down_Payment::find($id);
+        
+        if(!$down) {
+            abort(404);
+        }
+
+        $down->delete();
+
+        $message = ['message' => 'deleted successfully', 'down_payment__id' => $id];
+
+        return response()->json($message, 200);
     }
 }

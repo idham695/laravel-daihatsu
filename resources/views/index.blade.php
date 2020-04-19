@@ -10,7 +10,7 @@
                             <img src="img/{{$p->image}}" alt="" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">{{$p->name}}</h5>
-                                <p class="card-text">Rp. {{$p->min_price}}0.000 - Rp. {{$p->max_price}}0.000</p>
+                                <p class="card-text">Rp. {{ number_format($p->min_price, 3) }}.000 - Rp. {{ number_format($p->max_price, 3) }}.000</p>
                                 <a href="/product/{{$p->id}}" class="btn btn-primary u">View Product</a>
                             </div>
                         </div>

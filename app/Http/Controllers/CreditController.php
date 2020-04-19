@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Credit;
 
 class CreditController extends Controller
 {
@@ -13,7 +14,12 @@ class CreditController extends Controller
      */
     public function index()
     {
-        //
+        $credit = Credit::all();
+
+        return response()->json([
+            'error' => false,
+            'credit' => $credit
+        ], 200);
     }
 
     /**
@@ -34,7 +40,12 @@ class CreditController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $credit = Credit::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'credit' => $credit
+        ], 200);
     }
 
     /**
@@ -56,7 +67,7 @@ class CreditController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +79,18 @@ class CreditController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $credit = Credit::find($id);
+         
+         if(!$credit) {
+             abort(404);
+         }
+ 
+        $credit->fill($input);
+        $credit->save();
+ 
+         return response()->json($credit, 200);
     }
 
     /**
@@ -79,6 +101,16 @@ class CreditController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $credit = Credit::find($id);
+        
+        if(!$credit) {
+            abort(404);
+        }
+
+        $credit->delete();
+
+        $message = ['message' => 'deleted successfully', 'credit__id' => $id];
+
+        return response()->json($message, 200);
     }
 }

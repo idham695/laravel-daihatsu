@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product_Image_Eksterior;
+use App\Product;
 
 class Product_Image_EksteriorController extends Controller
 {
@@ -13,7 +15,14 @@ class Product_Image_EksteriorController extends Controller
      */
     public function index()
     {
-        //
+        $image = Product_Image_Eksterior::orderBy('id')->get();
+
+        $output = [
+            "message" => "image",
+            "result" => $image
+        ];
+
+        return response()->json($output, 200);
     }
 
     /**
@@ -34,7 +43,29 @@ class Product_Image_EksteriorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $request->validate([
+            'id_product' => 'required|exists:product,id',
+            'image' => 'required|file|image|mimes:jpeg,png,jpg,webp|max:2048'
+        ]);
+
+        $image = new Product_Image_Eksterior();
+        $image->id_product = $request->input('id_product');
+        
+        if ($request->hasFile('image')) {
+            $data = $request->file('image');
+            $imageName = $data->getClientOriginalName();
+            $request->file('image')->move(public_path("img/eksterior/"), $imageName);
+            $current_image_path = public_path('avatar') . '/' . $image->image;
+            if(file_exists($current_image_path)){
+                unlink($current_image_path);
+            }
+            $image->image = $imageName;
+        }
+
+        $image->save();
+        return response()->json($image, 200);
+
     }
 
     /**
@@ -45,7 +76,16 @@ class Product_Image_EksteriorController extends Controller
      */
     public function show($id)
     {
-        //
+        $image = Product_Image_Eksterior::find($id);
+
+        if(!$image) {
+            abort(404);
+        }
+
+        return response()->json([
+            'error' => false,
+            'image' => $image
+        ], 200);
     }
 
     /**
@@ -68,7 +108,35 @@ class Product_Image_EksteriorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $image = Product_Image_Eksterior::find($id);
+
+        if(!$image) {
+            abort(404);
+        }
+
+        $request->validate([
+            'id_product' => 'required|exists:product,id',
+            'image' => 'required|file|image|mimes:jpeg,png,jpg,webp|max:2048'
+        ]);
+
+        $image->id_product = $request->input('id_product');
+
+        if ($request->hasFile('image')) {
+            $data = $request->file('image');
+            $imageName = $data->getClientOriginalName();
+            $request->file('image')->move(public_path('img/eksterior'), $imageName);
+
+            $current_image_path = public_path('avatar') . '/' . $image->image;
+            if(file_exists($current_image_path)){
+                unlink($current_image_path);
+            }
+            $image->image = $imageName;
+        }
+
+        $image->save();
+        return response()->json($image, 200);
     }
 
     /**
@@ -79,6 +147,16 @@ class Product_Image_EksteriorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $image = Product_Image_Eksterior::find($id);
+
+        if(!$image) {
+            abort(404);
+        }
+
+        $image->delete();
+
+        $message = ['message' => 'deleted successfully', 'id_image_eksterior' => $id];
+
+        return response()->json($message, 200);
     }
 }

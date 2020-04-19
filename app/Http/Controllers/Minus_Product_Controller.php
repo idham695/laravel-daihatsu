@@ -44,7 +44,7 @@ class Minus_Product_Controller extends Controller
 
         return response()->json([
             'error' => false,
-            'plus' => $minus
+            'minus' => $minus
         ], 200);
     }
 

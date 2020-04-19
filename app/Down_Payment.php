@@ -15,11 +15,11 @@ class Down_Payment extends Model
 
     public function type()
     {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(Type::class, 'id_type')->orderBy('id');
     }
 
     public function credit ()
     {
-        return $this->hasMany(Credit::class);
+        return $this->hasMany(Credit::class,'id_down_payment')->orderBy('id');
     }
 }

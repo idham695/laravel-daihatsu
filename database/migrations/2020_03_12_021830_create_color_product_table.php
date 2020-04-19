@@ -19,7 +19,7 @@ class CreateColorProductTable extends Migration
             $table->foreign('id_product')->references('id')->on('product')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->string('image', '255');
+            $table->string('image', '255')->nullable();
             $table->string('color', '20');
             $table->timestamps();
         });

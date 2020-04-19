@@ -1,0 +1,29 @@
+.photo{
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+}
+.image{
+    margin-left: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.image-360, .interior, .eksterior h3{
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:600px){
+    .image{
+        margin-left: 30px;
+    }
+    .eksterior h3, .interior h3, .image-360 h3{
+        font-size: 22px;
+    }
+    .photo{
+        margin-top: 10px;
+    }
+}

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Type;
 use App\Product;
-
+use App\Down_Payment;
 class ProductController extends Controller
 {
     /**
@@ -13,9 +13,17 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getImageProducts($id){
+        $type = Product::with('type')->orderBy('id','desc')->get();
+        $product = Product::orderBy('id')->get();
+        $products = Product::with('image','interior','eksterior')->find($id); 
+
+
+        return view('product.getImage', compact('product','type','products'));
+    }
     public function index()
     {
-        //
+
     }
 
     /**
@@ -47,8 +55,11 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $products = Product::with('type')->find($id);
-        $type = Product::with('type')->orderBy('id','desc')->get();
+        $products = Product::with('type')->find($id); 
+        // $types = Type::with('down')->find($id); 
+        $type = Product::with('type', 'color')->orderBy('id','desc')->get();
+        $c = Product::withCount('color')->where('id', $id)->get();
+        $down = Down_payment::with('credit')->orderBy('id','desc')->get();
         $product = Product::orderBy('id')->get();
 
          // if(!$type) {
@@ -63,7 +74,7 @@ class ProductController extends Controller
         
 
 
-        return view('product.show', compact('product','type','products'));
+        return view('product.show', compact('product','type','products','down','c'));
     }
 
     /**

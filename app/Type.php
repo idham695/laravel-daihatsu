@@ -15,4 +15,8 @@ class Type extends Model
     {
         return $this->belongsTo(Product::class,'id_product');
     }
+    public function down()
+    {
+        return $this->hasMany(Down_Payment::class,'id_type');
+    }
 }

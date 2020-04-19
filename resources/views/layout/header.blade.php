@@ -11,4 +11,5 @@
     <link rel="stylesheet" href="{{ URL::asset('fontawesome/css/brands.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style2.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/image.css') }}">
 <body>
