@@ -21,6 +21,7 @@ class CreateProductImageTable extends Migration
                   ->onUpdate('cascade');
             $table->string('name', '50');
             $table->string('image', '255');
+            $table->string('extension', '50');
             $table->timestamps();
         });
     }

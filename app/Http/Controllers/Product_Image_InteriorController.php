@@ -126,7 +126,7 @@ class Product_Image_InteriorController extends Controller
         if ($request->hasFile('image')) {
             $data = $request->file('image');
             $imageName = $data->getClientOriginalName();
-            $request->file('image')->move(storage_path('img/interior'), $imageName);
+            $request->file('image')->move(public_path('img/interior'), $imageName);
 
             $current_image_path = storage_path('avatar') . '/' . $image->image;
             if(file_exists($current_image_path)){

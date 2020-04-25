@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Type;
 use App\Product;
 use App\Down_Payment;
+use App\Product_Image;
 class ProductController extends Controller
 {
     /**
@@ -14,16 +15,20 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getImageProducts($id){
+        // untuk sidebar
         $type = Product::with('type')->orderBy('id','desc')->get();
         $product = Product::orderBy('id')->get();
-        $products = Product::with('image','interior','eksterior')->find($id); 
 
+        // untuk halaman image
+        $products = Product::with('interior','eksterior')->find($id); 
+        $image = Product_Image::all();
+        $count = Product::withCount('image')->where('id', $id)->get();
 
-        return view('product.getImage', compact('product','type','products'));
+        return view('product.getImage', compact('product','type','products','image','count'));
     }
     public function index()
     {
-
+        
     }
 
     /**
@@ -55,12 +60,14 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $products = Product::with('type')->find($id); 
-        // $types = Type::with('down')->find($id); 
+        // untuk sidebar
         $type = Product::with('type', 'color')->orderBy('id','desc')->get();
+        $products = Product::with('type')->find($id);
+        
+        // untuk halaman show
+        $product = Product::orderBy('id')->get();
         $c = Product::withCount('color')->where('id', $id)->get();
         $down = Down_payment::with('credit')->orderBy('id','desc')->get();
-        $product = Product::orderBy('id')->get();
 
          // if(!$type) {
         //     abort(404);

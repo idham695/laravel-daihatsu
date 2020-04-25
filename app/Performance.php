@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Performance extends Model
 {
+    protected $table = "performance";
+    protected $fillable = array('id_type', 'machine_capacity', 'horse_power', 'torsi');
 
+    public function type(){
+        return $this->belongsTo(Type::class, 'id_type');
+    }
 }

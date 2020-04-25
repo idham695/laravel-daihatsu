@@ -19,4 +19,8 @@ class Type extends Model
     {
         return $this->hasMany(Down_Payment::class,'id_type');
     }
+    public function performance()
+    {
+        return $this->hasMany(Performance::class,'id_type');
+    }
 }

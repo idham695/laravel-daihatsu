@@ -109,7 +109,7 @@ class Color_ProductController extends Controller
      */
     public function destroy($id)
     {
-        $color = Type::find($id);
+        $color = Color_Product::find($id);
         
         if(!$color) {
             abort(404);

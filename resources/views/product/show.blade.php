@@ -25,7 +25,6 @@
             <h1>Informasi Terkait {{$products->name}}</h1>
             <p class="a">
                 {{$products->desc}}
-                {{$c}}
             </p>
         </div>
     </div>

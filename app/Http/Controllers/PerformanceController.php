@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Performance;
 
 class PerformanceController extends Controller
 {
@@ -13,7 +14,12 @@ class PerformanceController extends Controller
      */
     public function index()
     {
-        //
+        $performance = Performance::orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'performance' => $performance
+        ], 200);
     }
 
     /**
@@ -34,7 +40,12 @@ class PerformanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $performance = Performance::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'performance' => $performance
+        ], 200);
     }
 
     /**
@@ -45,7 +56,16 @@ class PerformanceController extends Controller
      */
     public function show($id)
     {
-        //
+        $performance = Performance::find($id);
+
+        if(!$performance) {
+            abort(404);
+        }
+
+        return response()->json([
+            'error' => false,
+            'type' => $performance
+        ], 200);
     }
 
     /**
@@ -68,7 +88,18 @@ class PerformanceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+
+        $performance = Performance::find($id);
+        
+        if(!$performance) {
+            abort(404);
+        }
+
+        $performance->fill($input);
+        $performance->save();
+
+        return response()->json($performance, 200);
     }
 
     /**
@@ -79,6 +110,16 @@ class PerformanceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $performance = Performance::find($id);
+        
+        if(!$performance) {
+            abort(404);
+        }
+
+        $performance->delete();
+
+        $message = ['message' => 'deleted successfully', 'color_id' => $id];
+
+        return response()->json($message, 200);
     }
 }

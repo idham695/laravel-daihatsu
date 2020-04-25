@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Type;
 use App\Product;
+use App\Performance;
 
 class TypeController extends Controller
 {
@@ -69,7 +70,11 @@ class TypeController extends Controller
      */
     public function show($id)
     {
+        // page
+        $performance = Type::with('performance')->orderBy('id')->get();
         $types = Type::find($id);
+
+        // sidebar
         $type = Product::with('type')->orderBy('id','desc')->get();
         $product = Product::orderBy('id')->get();
         // $type = Type::find($id);
@@ -83,7 +88,7 @@ class TypeController extends Controller
         //     'type' => $type
         // ], 200);
 
-        return view('type.show', compact('type','product','types'));
+        return view('type.show', compact('type','product','types','performance'));
     }
 
     /**
