@@ -33,6 +33,24 @@ Route::resource('/color', 'Color_ProductController')->except([
 Route::resource('/performance', 'PerformanceController')->except([
     'create','edit'
 ]);
+Route::resource('/capacity', 'CapacityController')->except([
+    'create','edit'
+]);
+Route::resource('/detailMesin', 'DetailMesinController')->except([
+    'create','edit'
+]);
+Route::resource('/kemudi', 'KemudiController')->except([
+    'create','edit'
+]);
+Route::resource('/suspensi', 'SuspensionController')->except([
+    'create','edit'
+]);
+Route::resource('/transmisi', 'TransmisionController')->except([
+    'create','edit'
+]);
+Route::resource('/velg', 'VlegBanController')->except([
+    'create','edit'
+]);
 Route::resource('/minus', 'Minus_Product_Controller')->except([
     'show','create','edit'
 ]);

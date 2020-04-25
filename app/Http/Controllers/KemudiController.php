@@ -14,7 +14,12 @@ class KemudiController extends Controller
      */
     public function index()
     {
-        //
+        $kemudi = Kemudi::orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'kemudi' => $kemudi
+        ]); 
     }
 
     /**
@@ -35,7 +40,12 @@ class KemudiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kemudi = Kemudi::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'kemudi' => $kemudi,
+        ], 200);
     }
 
     /**
@@ -46,7 +56,16 @@ class KemudiController extends Controller
      */
     public function show(Kemudi $kemudi)
     {
-        //
+        $kemudi = Kemudi::find($id);
+
+        if(!$kemudi) {
+            abort(404);
+        }
+
+        return response()->json([
+            'error' => false,
+            'kemudi' => $kemudi
+        ], 200);
     }
 
     /**
@@ -69,7 +88,18 @@ class KemudiController extends Controller
      */
     public function update(Request $request, Kemudi $kemudi)
     {
-        //
+        $input = $request->all();
+
+        $kemudi = Kemudi::find($id);
+        
+        if(!$kemudi) {
+            abort(404);
+        }
+
+        $kemudi->fill($input);
+        $kemudi->save();
+
+        return response()->json($kemudi, 200);
     }
 
     /**
@@ -80,6 +110,16 @@ class KemudiController extends Controller
      */
     public function destroy(Kemudi $kemudi)
     {
-        //
+        $kemudi = Kemudi::find($id);
+        
+        if(!$kemudi) {
+            abort(404);
+        }
+
+        $kemudi->delete();
+
+        $message = ['message' => 'deleted successfully', 'kemudi_id' => $id];
+
+        return response()->json($message, 200);
     }
 }

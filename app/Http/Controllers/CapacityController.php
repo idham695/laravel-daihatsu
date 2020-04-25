@@ -14,7 +14,12 @@ class CapacityController extends Controller
      */
     public function index()
     {
-        //
+        $capacity=Capacity::orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'capacity' => $capacity
+        ]); 
     }
 
     /**
@@ -35,7 +40,12 @@ class CapacityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $capacity = Capacity::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'capacity' => $capacity,
+        ], 200);
     }
 
     /**
@@ -46,7 +56,16 @@ class CapacityController extends Controller
      */
     public function show(Capacity $capacity)
     {
-        //
+        $capacity = Capacity::find($id);
+
+        if(!$capacity) {
+            abort(404);
+        }
+
+        return response()->json([
+            'error' => false,
+            'detail' => $capacity
+        ], 200);
     }
 
     /**
@@ -69,7 +88,18 @@ class CapacityController extends Controller
      */
     public function update(Request $request, Capacity $capacity)
     {
-        //
+        $input = $request->all();
+
+        $capcity = Capacity::find($id);
+        
+        if(!$capcity) {
+            abort(404);
+        }
+
+        $capcity->fill($input);
+        $capcity->save();
+
+        return response()->json($capcity, 200);
     }
 
     /**
@@ -80,6 +110,17 @@ class CapacityController extends Controller
      */
     public function destroy(Capacity $capacity)
     {
-        //
+        $capacity = Capacity::find($id);
+        
+        if(!$capacity) {
+            abort(404);
+        }
+
+        $capacity->delete();
+
+        $message = ['message' => 'deleted successfully', 'capacity_id' => $id];
+
+        return response()->json($message, 200);
+
     }
 }

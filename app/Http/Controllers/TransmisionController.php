@@ -14,7 +14,12 @@ class TransmisionController extends Controller
      */
     public function index()
     {
-        //
+        $transmisi = Transmision::orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'transmisi' => $transmisi
+        ]); 
     }
 
     /**
@@ -35,7 +40,12 @@ class TransmisionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $transmisi = Transmision::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'transmisi' => $transmisi
+        ], 200);
     }
 
     /**
@@ -46,7 +56,16 @@ class TransmisionController extends Controller
      */
     public function show(Transmision $transmision)
     {
-        //
+        $transmisi = Transmision::find($id);
+
+        if(!$transmisi) {
+            abort(404);
+        }
+
+        return response()->json([
+            'error' => false,
+            'transmisi' => $transmisi
+        ], 200);
     }
 
     /**
@@ -69,7 +88,18 @@ class TransmisionController extends Controller
      */
     public function update(Request $request, Transmision $transmision)
     {
-        //
+        $input = $request->all();
+
+        $transmisi = Transmision::find($id);
+        
+        if(!$transmisi) {
+            abort(404);
+        }
+
+        $transmisi->fill($input);
+        $transmisi->save();
+
+        return response()->json($transmisi, 200);
     }
 
     /**
@@ -80,6 +110,16 @@ class TransmisionController extends Controller
      */
     public function destroy(Transmision $transmision)
     {
-        //
+        $transmisi = Transmision::find($id);
+        
+        if(!$transmisi) {
+            abort(404);
+        }
+
+        $transmisi->delete();
+
+        $message = ['message' => 'deleted successfully', 'transmisi_id' => $id];
+
+        return response()->json($message, 200);
     }
 }

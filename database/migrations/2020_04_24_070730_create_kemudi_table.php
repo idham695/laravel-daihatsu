@@ -15,6 +15,12 @@ class CreateKemudiTable extends Migration
     {
         Schema::create('kemudi', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('id_type')->unsigned();
+            $table->foreign('id_type')->references('id')->on('type')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            $table->string('steering_gear_type', '50');
+            $table->float('radius_putar');
             $table->timestamps();
         });
     }

@@ -14,7 +14,12 @@ class SuspensionController extends Controller
      */
     public function index()
     {
-        //
+        $suspensi = Suspension::orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'suspensi' => $suspensi
+        ]); 
     }
 
     /**
@@ -35,7 +40,12 @@ class SuspensionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $suspensi = Suspension::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'suspensi' => $suspensi,
+        ], 200);
     }
 
     /**
@@ -46,7 +56,16 @@ class SuspensionController extends Controller
      */
     public function show(Suspension $suspension)
     {
-        //
+        $suspensi = Suspension::find($id);
+
+        if(!$suspensi) {
+            abort(404);
+        }
+
+        return response()->json([
+            'error' => false,
+            'suspensi' => $suspensi
+        ], 200);
     }
 
     /**
@@ -69,7 +88,18 @@ class SuspensionController extends Controller
      */
     public function update(Request $request, Suspension $suspension)
     {
-        //
+        $input = $request->all();
+
+        $suspensi = Suspension::find($id);
+        
+        if(!$suspensi) {
+            abort(404);
+        }
+
+        $suspensi->fill($input);
+        $suspensi->save();
+
+        return response()->json($suspensi, 200);
     }
 
     /**
@@ -80,6 +110,16 @@ class SuspensionController extends Controller
      */
     public function destroy(Suspension $suspension)
     {
-        //
+        $suspensi = Suspension::find($id);
+        
+        if(!$suspensi) {
+            abort(404);
+        }
+
+        $suspensi->delete();
+
+        $message = ['message' => 'deleted successfully', 'suspensi_id' => $id];
+
+        return response()->json($message, 200);
     }
 }

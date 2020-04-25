@@ -14,7 +14,12 @@ class DetailMesinController extends Controller
      */
     public function index()
     {
-        //
+        $detail=DetailMesin::orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'detail' => $detail
+        ]); 
     }
 
     /**
@@ -35,7 +40,12 @@ class DetailMesinController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $detail = DetailMesin::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'detail' => $detail,
+        ], 200);
     }
 
     /**
@@ -46,7 +56,16 @@ class DetailMesinController extends Controller
      */
     public function show(DetailMesin $detailMesin)
     {
-        //
+        $detail = DetailMesin::find($id);
+
+        if(!$detail) {
+            abort(404);
+        }
+
+        return response()->json([
+            'error' => false,
+            'detail' => $detail
+        ], 200);
     }
 
     /**
@@ -69,7 +88,18 @@ class DetailMesinController extends Controller
      */
     public function update(Request $request, DetailMesin $detailMesin)
     {
-        //
+        $input = $request->all();
+
+        $detail = DetailMesin::find($id);
+        
+        if(!$detail) {
+            abort(404);
+        }
+
+        $detail->fill($input);
+        $detail->save();
+
+        return response()->json($detail, 200);
     }
 
     /**
@@ -80,6 +110,16 @@ class DetailMesinController extends Controller
      */
     public function destroy(DetailMesin $detailMesin)
     {
-        //
+        $detail = DetailMesin::find($id);
+        
+        if(!$detail) {
+            abort(404);
+        }
+
+        $detail->delete();
+
+        $message = ['message' => 'deleted successfully', 'detail_id' => $id];
+
+        return response()->json($message, 200);
     }
 }

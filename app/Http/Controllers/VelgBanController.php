@@ -14,7 +14,12 @@ class VelgBanController extends Controller
      */
     public function index()
     {
-        //
+        $velg = VelgBan::orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'velg' => $velg
+        ]); 
     }
 
     /**
@@ -35,7 +40,12 @@ class VelgBanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $velg = VelgBan::create($request->all());
+
+        return response()->json([
+            'error' => false,
+            'velg' => $velg
+        ], 200);
     }
 
     /**
@@ -46,7 +56,16 @@ class VelgBanController extends Controller
      */
     public function show(VelgBan $velgBan)
     {
-        //
+        $velg = VelgBan::find($id);
+
+        if(!$velg) {
+            abort(404);
+        }
+
+        return response()->json([
+            'error' => false,
+            'velg' => $velg
+        ], 200);
     }
 
     /**
@@ -69,7 +88,18 @@ class VelgBanController extends Controller
      */
     public function update(Request $request, VelgBan $velgBan)
     {
-        //
+        $input = $request->all();
+
+        $velg = VelgBan::find($id);
+        
+        if(!$velg) {
+            abort(404);
+        }
+
+        $velg->fill($input);
+        $velg->save();
+
+        return response()->json($velg, 200);
     }
 
     /**
@@ -80,6 +110,16 @@ class VelgBanController extends Controller
      */
     public function destroy(VelgBan $velgBan)
     {
-        //
+        $vleg = VelgBan::find($id);
+        
+        if(!$vleg) {
+            abort(404);
+        }
+
+        $vleg->delete();
+
+        $message = ['message' => 'deleted successfully', 'vleg_id' => $id];
+
+        return response()->json($message, 200);
     }
 }
