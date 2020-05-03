@@ -78,6 +78,9 @@ Route::resource('/keamanan', 'KeamananController')->except([
 Route::resource('/kenyamanan', 'KenyamananController')->except([
     'show','create','edit'
 ]);
+Route::resource('/keselamatan', 'KeselamatanController')->except([
+    'show','create','edit'
+]);
 Route::resource('/lain', 'LainLainController')->except([
     'show','create','edit'
 ]);
