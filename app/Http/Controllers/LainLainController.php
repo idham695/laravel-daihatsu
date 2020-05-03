@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\VelgBan;
+use App\lainLain;
 use Illuminate\Http\Request;
 
-class VelgBanController extends Controller
+class LainLainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,12 @@ class VelgBanController extends Controller
      */
     public function index()
     {
-        $velg = VelgBan::orderBy('id')->get();
+        $lain = lainLain::orderBy('id')->get();
 
         return response()->json([
             'error' => false,
-            'velg' => $velg
-        ]); 
+            'lain' => $lain
+        ], 200);
     }
 
     /**
@@ -40,41 +40,32 @@ class VelgBanController extends Controller
      */
     public function store(Request $request)
     {
-        $velg = VelgBan::create($request->all());
+        $lain = lainLain::create($request->all());
 
         return response()->json([
             'error' => false,
-            'velg' => $velg
+            'lain' => $lain
         ], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\lainLain  $lainLain
      * @return \Illuminate\Http\Response
      */
-    public function show(VelgBan $velgBan)
+    public function show(lainLain $lainLain)
     {
-        $velg = VelgBan::find($id);
-
-        if(!$velg) {
-            abort(404);
-        }
-
-        return response()->json([
-            'error' => false,
-            'velg' => $velg
-        ], 200);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\lainLain  $lainLain
      * @return \Illuminate\Http\Response
      */
-    public function edit(VelgBan $velgBan)
+    public function edit(lainLain $lainLain)
     {
         //
     }
@@ -83,42 +74,42 @@ class VelgBanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\lainLain  $lainLain
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, lainLain $lainLain)
     {
         $input = $request->all();
 
-        $velg = VelgBan::find($id);
-        
-        if(!$velg) {
-            abort(404);
-        }
-
-        $velg->fill($input);
-        $velg->save();
-
-        return response()->json($velg, 200);
+        $lain = lainLain::find($id);
+         
+         if(!$lain) {
+             abort(404);
+         }
+ 
+        $lain->fill($input);
+        $lain->save();
+ 
+         return response()->json($lain, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\lainLain  $lainLain
      * @return \Illuminate\Http\Response
      */
-    public function destroy(VelgBan $velgBan)
+    public function destroy(lainLain $lainLain)
     {
-        $vleg = VelgBan::find($id);
+        $lain = lainLain::find($id);
         
-        if(!$vleg) {
+        if(!$lain) {
             abort(404);
         }
 
-        $vleg->delete();
+        $lain->delete();
 
-        $message = ['message' => 'deleted successfully', 'vleg_id' => $id];
+        $message = ['message' => 'deleted successfully', 'lain_lain_id' => $id];
 
         return response()->json($message, 200);
     }

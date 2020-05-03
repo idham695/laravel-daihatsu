@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\VelgBan;
+use App\Keselamatan;
 use Illuminate\Http\Request;
 
-class VelgBanController extends Controller
+class KeselamatanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,12 @@ class VelgBanController extends Controller
      */
     public function index()
     {
-        $velg = VelgBan::orderBy('id')->get();
+        $keselamatan = Keselamatan::orderBy('id')->get();
 
         return response()->json([
             'error' => false,
-            'velg' => $velg
-        ]); 
+            'keselamatan' => $keselamatan
+        ], 200);
     }
 
     /**
@@ -40,41 +40,32 @@ class VelgBanController extends Controller
      */
     public function store(Request $request)
     {
-        $velg = VelgBan::create($request->all());
+        $keselamatan = Keselamatan::create($request->all());
 
         return response()->json([
             'error' => false,
-            'velg' => $velg
+            'keselamatan' => $keselamatan
         ], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Keselamatan  $keselamatan
      * @return \Illuminate\Http\Response
      */
-    public function show(VelgBan $velgBan)
+    public function show(Keselamatan $keselamatan)
     {
-        $velg = VelgBan::find($id);
-
-        if(!$velg) {
-            abort(404);
-        }
-
-        return response()->json([
-            'error' => false,
-            'velg' => $velg
-        ], 200);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Keselamatan  $keselamatan
      * @return \Illuminate\Http\Response
      */
-    public function edit(VelgBan $velgBan)
+    public function edit(Keselamatan $keselamatan)
     {
         //
     }
@@ -83,42 +74,42 @@ class VelgBanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Keselamatan  $keselamatan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Keselamatan $keselamatan)
     {
         $input = $request->all();
 
-        $velg = VelgBan::find($id);
-        
-        if(!$velg) {
-            abort(404);
-        }
-
-        $velg->fill($input);
-        $velg->save();
-
-        return response()->json($velg, 200);
+        $keselamatan = Keselamatan::find($id);
+         
+         if(!$keselamatan) {
+             abort(404);
+         }
+ 
+        $keselamatan->fill($input);
+        $keselamatan->save();
+ 
+         return response()->json($keselamatan, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Keselamatan  $keselamatan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(VelgBan $velgBan)
+    public function destroy(Keselamatan $keselamatan)
     {
-        $vleg = VelgBan::find($id);
+        $keselamatan = Keselamatan::find($id);
         
-        if(!$vleg) {
+        if(!$keselamatan) {
             abort(404);
         }
 
-        $vleg->delete();
+        $keselamatan->delete();
 
-        $message = ['message' => 'deleted successfully', 'vleg_id' => $id];
+        $message = ['message' => 'deleted successfully', 'keselamatan_id' => $id];
 
         return response()->json($message, 200);
     }

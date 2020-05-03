@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\VelgBan;
+use App\Eksterior;
 use Illuminate\Http\Request;
 
-class VelgBanController extends Controller
+class EksteriorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,12 @@ class VelgBanController extends Controller
      */
     public function index()
     {
-        $velg = VelgBan::orderBy('id')->get();
+        $eksterior = Eksterior::orderBy('id')->get();
 
         return response()->json([
             'error' => false,
-            'velg' => $velg
-        ]); 
+            '$eksterior' => $eksterior
+        ], 200);
     }
 
     /**
@@ -40,41 +40,32 @@ class VelgBanController extends Controller
      */
     public function store(Request $request)
     {
-        $velg = VelgBan::create($request->all());
+        $eksterior = Eksterior::create($request->all());
 
         return response()->json([
             'error' => false,
-            'velg' => $velg
+            'eksterior' => $eksterior
         ], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Eksterior  $eksterior
      * @return \Illuminate\Http\Response
      */
-    public function show(VelgBan $velgBan)
+    public function show(Eksterior $eksterior)
     {
-        $velg = VelgBan::find($id);
-
-        if(!$velg) {
-            abort(404);
-        }
-
-        return response()->json([
-            'error' => false,
-            'velg' => $velg
-        ], 200);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Eksterior  $eksterior
      * @return \Illuminate\Http\Response
      */
-    public function edit(VelgBan $velgBan)
+    public function edit(Eksterior $eksterior)
     {
         //
     }
@@ -83,42 +74,42 @@ class VelgBanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Eksterior  $eksterior
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Eksterior $eksterior)
     {
         $input = $request->all();
 
-        $velg = VelgBan::find($id);
-        
-        if(!$velg) {
-            abort(404);
-        }
-
-        $velg->fill($input);
-        $velg->save();
-
-        return response()->json($velg, 200);
+        $eksterior = Eksterior::find($id);
+         
+         if(!$eksterior) {
+             abort(404);
+         }
+ 
+        $eksterior->fill($input);
+        $eksterior->save();
+ 
+         return response()->json($eksterior, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Eksterior  $eksterior
      * @return \Illuminate\Http\Response
      */
-    public function destroy(VelgBan $velgBan)
+    public function destroy(Eksterior $eksterior)
     {
-        $vleg = VelgBan::find($id);
+        $eskterior = Eksterior::find($id);
         
-        if(!$vleg) {
+        if(!$eskterior) {
             abort(404);
         }
 
-        $vleg->delete();
+        $eskterior->delete();
 
-        $message = ['message' => 'deleted successfully', 'vleg_id' => $id];
+        $message = ['message' => 'deleted successfully', 'eskterior_id' => $id];
 
         return response()->json($message, 200);
     }

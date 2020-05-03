@@ -23,4 +23,28 @@ class Type extends Model
     {
         return $this->hasMany(Performance::class,'id_type');
     }
+    public function detail()
+    {
+        return $this->hasMany(DetailMesin::class,'id_type');
+    }
+    public function capacity()
+    {
+        return $this->hasMany(Capacity::class,'id_type');
+    }
+    public function transmisi()
+    {
+        return $this->hasMany(Transmision::class,'id_type');
+    }
+    public function suspensi()
+    {
+        return $this->hasMany(Suspension::class,'id_type');
+    }
+    public function kemudi()
+    {
+        return $this->hasMany(Kemudi::class,'id_type');
+    }
+    public function velg()
+    {
+        return $this->hasMany(VelgBan::class,'id_type');
+    }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\VelgBan;
+use App\Hiburan;
 use Illuminate\Http\Request;
 
-class VelgBanController extends Controller
+class HiburanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +14,12 @@ class VelgBanController extends Controller
      */
     public function index()
     {
-        $velg = VelgBan::orderBy('id')->get();
+        $hiburan = Hiburan::orderBy('id')->get();
 
         return response()->json([
             'error' => false,
-            'velg' => $velg
-        ]); 
+            '$hiburan' => $hiburan
+        ], 200);
     }
 
     /**
@@ -40,41 +40,32 @@ class VelgBanController extends Controller
      */
     public function store(Request $request)
     {
-        $velg = VelgBan::create($request->all());
+        $hiburan = Hiburan::create($request->all());
 
         return response()->json([
             'error' => false,
-            'velg' => $velg
+            'hiburan' => $hiburan
         ], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Hiburan  $hiburan
      * @return \Illuminate\Http\Response
      */
-    public function show(VelgBan $velgBan)
+    public function show(Hiburan $hiburan)
     {
-        $velg = VelgBan::find($id);
-
-        if(!$velg) {
-            abort(404);
-        }
-
-        return response()->json([
-            'error' => false,
-            'velg' => $velg
-        ], 200);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Hiburan  $hiburan
      * @return \Illuminate\Http\Response
      */
-    public function edit(VelgBan $velgBan)
+    public function edit(Hiburan $hiburan)
     {
         //
     }
@@ -83,42 +74,42 @@ class VelgBanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Hiburan  $hiburan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Hiburan $hiburan)
     {
         $input = $request->all();
 
-        $velg = VelgBan::find($id);
-        
-        if(!$velg) {
-            abort(404);
-        }
-
-        $velg->fill($input);
-        $velg->save();
-
-        return response()->json($velg, 200);
+        $hiburan = Hiburan::find($id);
+         
+         if(!$hiburan) {
+             abort(404);
+         }
+ 
+        $hiburan->fill($input);
+        $hiburan->save();
+ 
+         return response()->json($hiburan, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\VelgBan  $velgBan
+     * @param  \App\Hiburan  $hiburan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(VelgBan $velgBan)
+    public function destroy(Hiburan $hiburan)
     {
-        $vleg = VelgBan::find($id);
+        $hiburan = Hiburan::find($id);
         
-        if(!$vleg) {
+        if(!$hiburan) {
             abort(404);
         }
 
-        $vleg->delete();
+        $hiburan->delete();
 
-        $message = ['message' => 'deleted successfully', 'vleg_id' => $id];
+        $message = ['message' => 'deleted successfully', 'hiburan_id' => $id];
 
         return response()->json($message, 200);
     }

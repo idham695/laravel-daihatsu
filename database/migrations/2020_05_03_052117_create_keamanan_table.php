@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransmisiTable extends Migration
+class CreateKeamananTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateTransmisiTable extends Migration
      */
     public function up()
     {
-        Schema::create('transmisi', function (Blueprint $table) {
+        Schema::create('keamanan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('id_type')->unsigned();
             $table->foreign('id_type')->references('id')->on('type')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->integer('girbox');
-            $table->string('penggerak');
-            $table->string('transmisi');
+            $table->enum('smartAccess',['Ya','Tidak']);
+            $table->enum('powerDoorLocks',['Ya','Tidak']);
+            $table->enum('antiTheftDevice',['Ya','Tidak']);
+            $table->enum('alarmMobil',['Ya','Tidak']);
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateTransmisiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transmisi');
+        Schema::dropIfExists('keamanan');
     }
 }

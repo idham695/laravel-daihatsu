@@ -71,7 +71,7 @@ class TypeController extends Controller
     public function show($id)
     {
         // page
-        $performance = Type::with('performance')->orderBy('id')->get();
+        $performance = Type::with('performance','kemudi','capacity','velg','transmisi','suspensi','detail')->orderBy('id')->get();
         $types = Type::find($id);
 
         // sidebar

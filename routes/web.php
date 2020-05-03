@@ -48,7 +48,7 @@ Route::resource('/suspensi', 'SuspensionController')->except([
 Route::resource('/transmisi', 'TransmisionController')->except([
     'create','edit'
 ]);
-Route::resource('/velg', 'VlegBanController')->except([
+Route::resource('/velg', 'VelgBanController')->except([
     'create','edit'
 ]);
 Route::resource('/minus', 'Minus_Product_Controller')->except([
@@ -64,6 +64,21 @@ Route::resource('/image', 'Product_ImageController')->except([
     'update','create','edit'
 ]);
 Route::resource('/down', 'Down_PaymentController')->except([
+    'show','create','edit'
+]);
+Route::resource('/eksterior', 'EksteriorController')->except([
+    'show','create','edit'
+]);
+Route::resource('/hiburan', 'HiburanController')->except([
+    'show','create','edit'
+]);
+Route::resource('/keamanan', 'KeamananController')->except([
+    'show','create','edit'
+]);
+Route::resource('/kenyamanan', 'KenyamananController')->except([
+    'show','create','edit'
+]);
+Route::resource('/lain', 'LainLainController')->except([
     'show','create','edit'
 ]);
 Route::resource('/credit', 'CreditController')->except([
