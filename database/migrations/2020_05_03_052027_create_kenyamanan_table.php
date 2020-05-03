@@ -43,7 +43,6 @@ class CreateKenyamananTable extends Migration
             $table->enum('bottleHolder',['Ya','Tidak']);
             $table->enum('lampuBagasi',['Ya','Tidak']);
             $table->enum('mejaLipatBelakang',['Ya','Tidak']);
-            $table->enum('armRest',['Ya','Tidak']);
             $table->timestamps();
         });
     }
