@@ -14,11 +14,11 @@ class KeamananController extends Controller
      */
     public function index()
     {
-        $kemanan = Keamanan::orderBy('id')->get();
+        $keamanan = Keamanan::orderBy('id')->get();
 
         return response()->json([
             'error' => false,
-            'kemanan' => $kemanan
+            'keamanan' => $keamanan
         ], 200);
     }
 

@@ -18,7 +18,7 @@ class EksteriorController extends Controller
 
         return response()->json([
             'error' => false,
-            '$eksterior' => $eksterior
+            'eksterior' => $eksterior
         ], 200);
     }
 

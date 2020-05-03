@@ -18,7 +18,7 @@ class HiburanController extends Controller
 
         return response()->json([
             'error' => false,
-            '$hiburan' => $hiburan
+            'hiburan' => $hiburan
         ], 200);
     }
 
