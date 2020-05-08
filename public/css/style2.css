@@ -1,8 +1,19 @@
 /* search page */
+input[type=search]{
+    width: 60%;
+    margin-top: 5px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px 40px;
+    background-image: url('../img/search-26252.png');
+    background-position: 8px; 
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border: 2px solid #e1e2e3;
+    margin-left: 30px;
+}
 .search{
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 200;
+    margin-top: 70px;
 }
 /* banner */
 .type-price{
@@ -16,21 +27,6 @@
     margin-left: 60px;
     margin-bottom: 20px;
 }
-.product-price::-webkit-scrollbar {
-    width: 20px;
-  }
-  
-  /* Track */
-.product-price::-webkit-scrollbar-track {
-    box-shadow: inherit 0 0 5px grey; 
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-.product-price::-webkit-scrollbar-thumb {
-    background: grey; 
-    border-radius: 10px;
-  }
 .catalog-body{
     padding: 10px;
     border-radius: 8px;
@@ -181,24 +177,13 @@ ul{
 .product-color{
     overflow-x: scroll;
 }
-.product-color::-webkit-scrollbar {
-    width: 20px;
-  }
-  
-  /* Track */
-.product-color::-webkit-scrollbar-track {
-    box-shadow: inherit 0 0 5px grey; 
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-.product-color::-webkit-scrollbar-thumb {
-    background: grey; 
-    border-radius: 10px;
-  }
 
 
 @media screen and (max-width:600px){
+    input[type=search]{
+        width: 50%;
+        margin-left: 0;
+    }
     /* search page */
     .search{
         margin-top: 10px;

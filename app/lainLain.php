@@ -10,7 +10,7 @@ class lainLain extends Model
 
     protected $fillable = array('id_type', 'tachometer', 'electronicMultiTripmeter', 'jokDilapisiKulit','lapisanBerbahanKain'
                                 ,'stirBerbalutKulit','temperaturUdaraLuar','odometerDigital','pengaturanKursiElektrik','tangkiBahanBakar',
-                                'spoilerBelakang');
+                                'jenisLampuDepan');
 
     
     public function type(){

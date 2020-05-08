@@ -12,4 +12,5 @@
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style2.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/image.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/type.css') }}">
 <body>

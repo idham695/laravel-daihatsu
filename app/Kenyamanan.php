@@ -13,7 +13,7 @@ class Kenyamanan extends Model
                                 ,'spionLipat','followMeHomeHeadLamps','steeringWheel','lingkarKemudi'
                                 ,'cruiseControl','kursiLipatBelakang','pembukaBagasi','lampuPengingat'
                                 ,'headrestKursi','armRest','cupHolder','lumbarSupport','bottleHolder',
-                                'lampuBagasi','mejaLipatBelakang','armRest');
+                                'lampuBagasi','mejaLipatBelakang','armRestTengah');
 
     
     public function type(){

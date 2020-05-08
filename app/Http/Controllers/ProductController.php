@@ -14,6 +14,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function searchProduct(Request $request){
+        $cari = $request->cari;
+        $product = Product::where('name','like',"%".$cari."%")->get();
+
+        return view('index', compact('product'));
+    }
     public function getImageProducts($id){
         // untuk sidebar
         $type = Product::with('type')->orderBy('id','desc')->get();

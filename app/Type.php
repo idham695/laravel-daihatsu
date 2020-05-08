@@ -47,4 +47,28 @@ class Type extends Model
     {
         return $this->hasMany(VelgBan::class,'id_type');
     }
+    public function eksterior()
+    {
+        return $this->hasMany(Eksterior::class,'id_type');
+    }
+    public function hiburan()
+    {
+        return $this->hasMany(Hiburan::class,'id_type');
+    }
+    public function lain()
+    {
+        return $this->hasMany(lainLain::class,'id_type');
+    }
+    public function kenyamanan()
+    {
+        return $this->hasMany(Kenyamanan::class,'id_type');
+    }
+    public function keselamatan()
+    {
+        return $this->hasMany(Keselamatan::class,'id_type');
+    }
+    public function keamanan()
+    {
+        return $this->hasMany(Keamanan::class,'id_type');
+    }
 }

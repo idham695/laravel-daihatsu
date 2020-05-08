@@ -16,6 +16,7 @@ Route::get('/csrf', 'CsrfController@index');
 Route::get('/', 'TypeController@index');
 Route::get('/types', 'TypeController@getType');
 Route::get('/products', 'ProductController@index');
+Route::post('/searchProduct', 'ProductController@searchProduct');
 Route::get('/product/image/{id}', 'ProductController@getImageProducts');
 Route::post('/image_interior/{id}', 'Product_Image_InteriorController@update');
 Route::post('/image_eksterior/{id}', 'Product_Image_EksteriorController@update');

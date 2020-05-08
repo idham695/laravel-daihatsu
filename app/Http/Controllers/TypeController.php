@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Type;
 use App\Product;
 use App\Performance;
+use App\Down_Payment;
 
 class TypeController extends Controller
 {
@@ -72,7 +73,9 @@ class TypeController extends Controller
     {
         // page
         $performance = Type::with('performance','kemudi','capacity','velg','transmisi','suspensi','detail')->orderBy('id')->get();
-        $types = Type::find($id);
+        $spesification = Type::with('eksterior','hiburan','lain','kenyamanan','keselamatan','keamanan')->orderBy('id')->get();
+        $down = Down_payment::with('credit')->orderBy('id','desc')->get();
+        $types = Type::with('down')->find($id);
 
         // sidebar
         $type = Product::with('type')->orderBy('id','desc')->get();
@@ -85,10 +88,11 @@ class TypeController extends Controller
 
         // return response()->json([
         //     'error' => false,
-        //     'type' => $type
+        //     'types' => $types,
+        //     'down' => $down
         // ], 200);
 
-        return view('type.show', compact('type','product','types','performance'));
+        return view('type.show', compact('type','product','types','performance','spesification','down'));
     }
 
     /**

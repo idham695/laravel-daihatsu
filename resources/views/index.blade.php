@@ -4,6 +4,19 @@
     <div class="product" id="product">
             <div class="container">
                 <div class="row">
+                    <div class="col-md-6 search">
+                        <form action="searchProduct" method="POST">
+                        {{ csrf_field() }}
+                            <div class="input-group mt-3">
+                                <input type="text" class="form-control" placeholder="Cari Merk Mobil..." name="cari">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit">Cari</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
                     @foreach($product as $p)
                     <div class="col-md-4 d-flex">
                         <div class="card flex-fill">

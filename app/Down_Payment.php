@@ -18,7 +18,7 @@ class Down_Payment extends Model
         return $this->belongsTo(Type::class, 'id_type')->orderBy('id');
     }
 
-    public function credit ()
+    public function credit()
     {
         return $this->hasMany(Credit::class,'id_down_payment')->orderBy('id');
     }
