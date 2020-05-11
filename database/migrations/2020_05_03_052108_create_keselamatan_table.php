@@ -19,21 +19,28 @@ class CreateKeselamatanTable extends Migration
             $table->foreign('id_type')->references('id')->on('type')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->enum('airbagDepan',['Ya','Tidak']);
-            $table->enum('airbagBelakang',['Ya','Tidak']);
-            $table->enum('childSafety',['Ya','Tidak']);
-            $table->enum('kantongUdara',['Ya','Tidak']);
-            $table->enum('airbagSamping',['Ya','Tidak']);
-            $table->enum('vehicleStability',['Ya','Tidak']);
-            $table->enum('sabukPengaman',['Ya','Tidak']);
-            $table->enum('pengingatPengaman',['Ya','Tidak']);
-            $table->enum('kameraBelakang',['Ya','Tidak']);
-            $table->enum('sensorParkir',['Ya','Tidak']);
-            $table->enum('engineCheck',['Ya','Tidak']);
-            $table->enum('pengukurTekanan',['Ya','Tidak']);
-            $table->enum('pelindungBenturan',['Ya','Tidak']);
-            $table->enum('pengingatPintu',['Ya','Tidak']);
-            $table->enum('kontrolTraksi',['Ya','Tidak']);
+            $table->enum('airbagDepan',['Ya','Tidak'])->nullable();
+            $table->enum('airbagBelakang',['Ya','Tidak'])->nullable();
+            $table->enum('airbagSamping',['Ya','Tidak'])->nullable();
+            $table->enum('childSafety',['Ya','Tidak'])->nullable();
+            $table->enum('kantongUdara',['Ya','Tidak'])->nullable();
+            $table->enum('vehicleStability',['Ya','Tidak'])->nullable();
+            $table->enum('sabukPengaman',['Ya','Tidak'])->nullable();
+            $table->enum('pengingatPengamanBelakang',['Ya','Tidak'])->nullable();
+            $table->enum('kameraBelakang',['Ya','Tidak'])->nullable();
+            $table->enum('sensorParkir',['Ya','Tidak'])->nullable();
+            $table->enum('engineCheck',['Ya','Tidak'])->nullable();
+            $table->enum('pengukurTekanan',['Ya','Tidak'])->nullable();
+            $table->enum('pelindungBenturanDepan',['Ya','Tidak'])->nullable();
+            $table->enum('pelindungBenturanSamping',['Ya','Tidak'])->nullable();
+            $table->enum('pengingatPintu',['Ya','Tidak'])->nullable();
+            $table->enum('kontrolTraksi',['Ya','Tidak'])->nullable();
+            $table->enum('antiLockBracking',['Ya','Tidak'])->nullable();
+            $table->enum('brakeAssist',['Ya','Tidak'])->nullable();
+            $table->enum('EBD',['Ya','Tidak'])->nullable();
+            $table->enum('crashSensor',['Ya','Tidak'])->nullable();
+            $table->enum('sabukPengamanDepan',['Ya','Tidak'])->nullable();
+            $table->enum('spionTengahLipat',['Ya','Tidak'])->nullable();
             $table->timestamps();
         });
     }

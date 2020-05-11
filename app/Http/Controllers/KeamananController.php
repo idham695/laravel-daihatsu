@@ -77,7 +77,7 @@ class KeamananController extends Controller
      * @param  \App\Keamanan  $keamanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Keamanan $keamanan)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 

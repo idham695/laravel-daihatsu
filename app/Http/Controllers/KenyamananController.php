@@ -14,7 +14,7 @@ class KenyamananController extends Controller
      */
     public function index()
     {
-        $kenyamanan = Kenyamanan::orderBy('id')->get();
+        $kenyamanan = Kenyamanan::orderBy('id')->select('id_type')->get();
 
         return response()->json([
             'error' => false,
@@ -77,7 +77,7 @@ class KenyamananController extends Controller
      * @param  \App\Kenyamanan  $kenyamanan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kenyamanan $kenyamanan)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 

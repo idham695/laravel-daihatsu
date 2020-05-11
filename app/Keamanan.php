@@ -8,7 +8,7 @@ class Keamanan extends Model
 {
     protected $table = 'keamanan';
 
-    protected $fillable = array('id_type', 'smartAccess', 'powerDoorLocks', 'antiTheftDevice','alarmMobil');
+    protected $fillable = array('id_type', 'smartAccess', 'powerDoorLocks', 'antiTheftDevice','alarmMobil','centralLocking','engineImmobilizer');
 
     
     public function type(){

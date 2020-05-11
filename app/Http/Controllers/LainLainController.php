@@ -77,7 +77,7 @@ class LainLainController extends Controller
      * @param  \App\lainLain  $lainLain
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, lainLain $lainLain)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 

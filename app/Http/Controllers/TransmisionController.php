@@ -86,7 +86,7 @@ class TransmisionController extends Controller
      * @param  \App\Transmision  $transmision
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Transmision $transmision)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 

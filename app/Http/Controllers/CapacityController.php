@@ -86,7 +86,7 @@ class CapacityController extends Controller
      * @param  \App\Capacity  $capacity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Capacity $capacity)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 
@@ -108,7 +108,7 @@ class CapacityController extends Controller
      * @param  \App\Capacity  $capacity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Capacity $capacity)
+    public function destroy($id)
     {
         $capacity = Capacity::find($id);
         

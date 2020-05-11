@@ -19,16 +19,17 @@ class CreateLainLainTable extends Migration
             $table->foreign('id_type')->references('id')->on('type')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->enum('tachometer',['Ya','Tidak']);
-            $table->enum('electronicMultiTripmeter',['Ya','Tidak']);
-            $table->enum('jokDilapisiKulit',['Ya','Tidak']);
-            $table->enum('lapisanBerbahanKain',['Ya','Tidak']);
-            $table->enum('stirBerbalutKulit',['Ya','Tidak']);
-            $table->enum('temperaturUdaraLuar',['Ya','Tidak']);
-            $table->enum('odometerDigital',['Ya','Tidak']);
-            $table->enum('pengaturanKursiElektrik',['Ya','Tidak']);
-            $table->enum('tangkiBahanBakar',['Ya','Tidak']);
-            $table->string('jenisLampuDepan','20');
+            $table->enum('tachometer',['Ya','Tidak'])->nullable();
+            $table->enum('electronicMultiTripmeter',['Ya','Tidak'])->nullable();
+            $table->enum('jokDilapisiKulit',['Ya','Tidak'])->nullable();
+            $table->enum('lapisanBerbahanKain',['Ya','Tidak'])->nullable();
+            $table->enum('stirBerbalutKulit',['Ya','Tidak'])->nullable();
+            $table->enum('temperaturUdaraLuar',['Ya','Tidak'])->nullable();
+            $table->enum('jamDigital',['Ya','Tidak'])->nullable();
+            $table->enum('odometerDigital',['Ya','Tidak'])->nullable();
+            $table->enum('pengaturanKursiElektrik',['Ya','Tidak'])->nullable();
+            $table->enum('tangkiBahanBakar',['Ya','Tidak'])->nullable();
+            $table->string('jenisLampuDepan','20')->nullable();
             $table->timestamps();
         });
     }

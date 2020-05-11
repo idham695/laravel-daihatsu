@@ -117,10 +117,10 @@
                                 <tbody>
                                     <tr>
                                         <td>Suspensi depan</td>
-                                        <td>{{$suspensi->suspensi_depan}} orang</td>
+                                        <td>{{$suspensi->suspensi_depan}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Suspendi belakang</td>
+                                        <td>Suspensi belakang</td>
                                         <td>{{$suspensi->suspensi_belakang}}</td>
                                     </tr>
                                 </tbody>
@@ -225,7 +225,7 @@
                                     </tr>
                                     <tr>
                                         <td>Radius Putas</td>
-                                        <td>{{$kemudi->radius_putar}}</td>
+                                        <td>{{$kemudi->radius_putar}} m</td>
                                     </tr>
                                 </tbody>
                     </table>

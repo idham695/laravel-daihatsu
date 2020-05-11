@@ -17,7 +17,7 @@ class TypeController extends Controller
      */
     public function getType()
     {
-        $type=Type::with('down')->orderBy('id')->get();
+        $type=Type::orderBy('id')->get();
         return response()->json([
             'error' => false,
             'types' => $type

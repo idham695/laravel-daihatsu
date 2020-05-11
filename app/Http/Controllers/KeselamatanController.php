@@ -77,7 +77,7 @@ class KeselamatanController extends Controller
      * @param  \App\Keselamatan  $keselamatan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Keselamatan $keselamatan)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 

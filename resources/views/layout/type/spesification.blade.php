@@ -110,6 +110,10 @@
                                                 <td>Jenis Rem Depan</td>
                                                 <td>{{$eksterior->jenisRemDepan}}</td>
                                             </tr>
+                                            <tr>
+                                                <td>Fitur Tambahan</td>
+                                                <td>{{$eksterior->fiturTambahan}}</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 @endforeach
@@ -126,6 +130,10 @@
                                     <tr>
                                         <td>Layar Sentuh</td>
                                         <td>{{$hiburan->layarSentuh}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Radio AM/FM</td>
+                                        <td>{{$hiburan->radioAM}}</td>
                                     </tr>
                                     <tr>
                                         <td>Sistem Navigasi</td>
@@ -192,6 +200,10 @@
                                         <td>Alarm Mobil</td>
                                         <td>{{$keamanan->alarmMobil}}</td>
                                     </tr>
+                                    <tr>
+                                        <td>Engine Immobilizer</td>
+                                        <td>{{$keamanan->engineImmobilizer}}</td>
+                                    </tr>
                                 </tbody>
                     </table>
                     @endforeach
@@ -211,7 +223,7 @@
                                     </tr>
                                     <tr>
                                         <td>Power Window</td>
-                                        <td>{{$kenyamanan->powerWindow}}</td>
+                                        <td>{{$kenyamanan->powerWindowDepan}}</td>
                                     </tr>
                                     <tr>
                                         <td>Power Steering</td>
@@ -270,7 +282,7 @@
                                         <td>{{$kenyamanan->pembukaBagasi}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Lampu Pengingat< Jumlah Bahan Bakar</td>
+                                        <td>Lampu Pengingat Jumlah Bahan Bakar</td>
                                         <td>{{$kenyamanan->lampuPengingat}}</td>
                                     </tr>
                                     <tr>
@@ -283,7 +295,7 @@
                                     </tr>
                                     <tr>
                                         <td>Cup Holder - Depan</td>
-                                        <td>{{$kenyamanan->cupHolder}}</td>
+                                        <td>{{$kenyamanan->cupHolderDepan}}</td>
                                     </tr>
                                     <tr>
                                         <td>Lumbar Support</td>
@@ -367,8 +379,8 @@
                                         <td>{{$keselamatan->pengukurTekanan}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Pelindung Benturan</td>
-                                        <td>{{$keselamatan->pelindungBenturan}}</td>
+                                        <td>Pelindung Benturan Samping</td>
+                                        <td>{{$keselamatan->pelindungBenturanSamping}}</td>
                                     </tr>
                                     <tr>
                                         <td>Pengingat Pintu</td>

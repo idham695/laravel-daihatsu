@@ -19,16 +19,17 @@ class CreateHiburanTable extends Migration
             $table->foreign('id_type')->references('id')->on('type')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->enum('layarSentuh',['Ya','Tidak']);
-            $table->enum('sistemNavigasi',['Ya','Tidak']);
-            $table->enum('sambunganBluetooth',['Ya','Tidak']);
-            $table->enum('pemutarCD',['Ya','Tidak']);
-            $table->enum('soketUSB',['Ya','Tidak']);
-            $table->enum('pemutarDVD',['Ya','Tidak']);
-            $table->enum('speakerDepan',['Ya','Tidak']);
-            $table->enum('speakerBelakang',['Ya','Tidak']);
-            $table->enum('audio2DIN',['Ya','Tidak']);
-            $table->enum('perintahSuara',['Ya','Tidak']);
+            $table->enum('layarSentuh',['Ya','Tidak'])->nullable();
+            $table->enum('radioAM',['Ya','Tidak'])->nullable();
+            $table->enum('sistemNavigasi',['Ya','Tidak'])->nullable();
+            $table->enum('sambunganBluetooth',['Ya','Tidak'])->nullable();
+            $table->enum('pemutarCD',['Ya','Tidak'])->nullable();
+            $table->enum('soketUSB',['Ya','Tidak'])->nullable();
+            $table->enum('pemutarDVD',['Ya','Tidak'])->nullable();
+            $table->enum('speakerDepan',['Ya','Tidak'])->nullable();
+            $table->enum('speakerBelakang',['Ya','Tidak'])->nullable();
+            $table->enum('audio2DIN',['Ya','Tidak'])->nullable();
+            $table->enum('perintahSuara',['Ya','Tidak'])->nullable();
             $table->timestamps();
         });
     }

@@ -86,7 +86,7 @@ class DetailMesinController extends Controller
      * @param  \App\DetailMesin  $detailMesin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DetailMesin $detailMesin)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 

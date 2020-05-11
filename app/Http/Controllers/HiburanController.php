@@ -77,7 +77,7 @@ class HiburanController extends Controller
      * @param  \App\Hiburan  $hiburan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hiburan $hiburan)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 

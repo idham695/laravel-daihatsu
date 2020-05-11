@@ -19,10 +19,12 @@ class CreateKeamananTable extends Migration
             $table->foreign('id_type')->references('id')->on('type')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->enum('smartAccess',['Ya','Tidak']);
-            $table->enum('powerDoorLocks',['Ya','Tidak']);
-            $table->enum('antiTheftDevice',['Ya','Tidak']);
-            $table->enum('alarmMobil',['Ya','Tidak']);
+            $table->enum('centralLocking',['Ya','Tidak'])->nullable();
+            $table->enum('smartAccess',['Ya','Tidak'])->nullable();
+            $table->enum('powerDoorLocks',['Ya','Tidak'])->nullable();
+            $table->enum('antiTheftDevice',['Ya','Tidak'])->nullable();
+            $table->enum('alarmMobil',['Ya','Tidak'])->nullable();
+            $table->enum('engineImmobilizer',['Ya','Tidak'])->nullable();
             $table->timestamps();
         });
     }

@@ -77,7 +77,7 @@ class EksteriorController extends Controller
      * @param  \App\Eksterior  $eksterior
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Eksterior $eksterior)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 

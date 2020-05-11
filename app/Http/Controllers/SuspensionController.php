@@ -86,7 +86,7 @@ class SuspensionController extends Controller
      * @param  \App\Suspension  $suspension
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Suspension $suspension)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 
@@ -108,7 +108,7 @@ class SuspensionController extends Controller
      * @param  \App\Suspension  $suspension
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Suspension $suspension)
+    public function destroy($id)
     {
         $suspensi = Suspension::find($id);
         

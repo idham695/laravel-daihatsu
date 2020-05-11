@@ -86,7 +86,7 @@ class KemudiController extends Controller
      * @param  \App\Kemudi  $kemudi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kemudi $kemudi)
+    public function update(Request $request, $id)
     {
         $input = $request->all();
 
