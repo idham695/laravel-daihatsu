@@ -360,7 +360,7 @@
                                     </tr>
                                     <tr>
                                         <td>Pengingat Pengaman</td>
-                                        <td>{{$keselamatan->pengingatPengaman}}</td>
+                                        <td>{{$keselamatan->pengingatPengamanBelakang}}</td>
                                     </tr>
                                     <tr>
                                         <td>Kamera Belakang</td>

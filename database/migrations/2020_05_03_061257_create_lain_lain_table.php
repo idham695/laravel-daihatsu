@@ -29,6 +29,7 @@ class CreateLainLainTable extends Migration
             $table->enum('odometerDigital',['Ya','Tidak'])->nullable();
             $table->enum('pengaturanKursiElektrik',['Ya','Tidak'])->nullable();
             $table->enum('tangkiBahanBakar',['Ya','Tidak'])->nullable();
+            $table->string('fiturKeselamatanCanggih','50')->nullable();
             $table->string('jenisLampuDepan','20')->nullable();
             $table->timestamps();
         });

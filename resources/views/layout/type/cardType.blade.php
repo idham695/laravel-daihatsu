@@ -21,7 +21,7 @@
                     </div>
                     <div class="d-flex justify-content-between body">
                         <div class="kolom">Pengingat Pengaman</div>
-                        <strong>{{$keselamatan->pengingatPengaman}}</strong>
+                        <strong>{{$keselamatan->pengingatPengamanBelakang}}</strong>
                     </div>
                 @endforeach 
             </div>

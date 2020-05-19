@@ -21,6 +21,7 @@ class CreateEksteriorTable extends Migration
             ->onUpdate('cascade');
             $table->enum('adjutableHeadlight',['Ya','Tidak'])->nullable();
             $table->enum('lampuKabutDepan',['Ya','Tidak'])->nullable();
+            $table->enum('lampuKabutBelakang',['Ya','Tidak'])->nullable();
             $table->enum('kacaSpionElektrik',['Ya','Tidak'])->nullable();
             $table->enum('kacaSpionLuarManual',['Ya','Tidak'])->nullable();
             $table->enum('wiperOtomatis',['Ya','Tidak'])->nullable();
@@ -45,6 +46,7 @@ class CreateEksteriorTable extends Migration
             $table->enum('tuasPembuka',['Ya','Tidak'])->nullable();
             $table->string('jenisRemBelakang','20');
             $table->string('jenisRemDepan','20');
+            $table->string('fiturTambahan','100')->nullable();
             $table->timestamps();
         });
     }

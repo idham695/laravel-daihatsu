@@ -19,9 +19,9 @@ class CreateHiburanTable extends Migration
             $table->foreign('id_type')->references('id')->on('type')
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->enum('layarSentuh',['Ya','Tidak'])->nullable();
+            $table->enum('layarSentuh',['Ya','Tidak','Optional'])->nullable();
             $table->enum('radioAM',['Ya','Tidak'])->nullable();
-            $table->enum('sistemNavigasi',['Ya','Tidak'])->nullable();
+            $table->enum('sistemNavigasi',['Ya','Tidak','Optional'])->nullable();
             $table->enum('sambunganBluetooth',['Ya','Tidak'])->nullable();
             $table->enum('pemutarCD',['Ya','Tidak'])->nullable();
             $table->enum('soketUSB',['Ya','Tidak'])->nullable();
@@ -30,6 +30,7 @@ class CreateHiburanTable extends Migration
             $table->enum('speakerBelakang',['Ya','Tidak'])->nullable();
             $table->enum('audio2DIN',['Ya','Tidak'])->nullable();
             $table->enum('perintahSuara',['Ya','Tidak'])->nullable();
+            $table->string('fiturTambahan', 100)->nullable();
             $table->timestamps();
         });
     }

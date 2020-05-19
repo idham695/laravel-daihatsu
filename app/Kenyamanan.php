@@ -14,7 +14,7 @@ class Kenyamanan extends Model
                                 ,'spionLipat','followMeHomeHeadLamps','steeringWheel','lingkarKemudi'
                                 ,'cruiseControl','kursiLipatBelakang','pembukaBagasi','lampuPengingat'
                                 ,'headrestKursi','armRest','cupHolderDepan','cupHolderBelakang','lumbarSupport','bottleHolder',
-                                'lampuBagasi','mejaLipatBelakang','armRestTengah','onBoardComputer','spionLipat',
+                                'lampuBagasi','mejaLipatBelakang','armRestTengah','onBoardComputer',
                                 'automaticHeadLamps','powerOutlet','lampuBaca','vanityMirror','keylessEntry','fiturTambahan');
 
     

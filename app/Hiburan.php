@@ -10,7 +10,7 @@ class Hiburan extends Model
 
     protected $fillable = array('id_type', 'layarSentuh', 'sistemNavigasi', 'sambunganBluetooth','pemutarCD'
                                 ,'soketUSB','pemutarDVD','speakerDepan','speakerBelakang','audio2DIN',
-                                'perintahSuara','radioAM');
+                                'perintahSuara','radioAM','fiturTambahan');
 
     
     public function type(){
