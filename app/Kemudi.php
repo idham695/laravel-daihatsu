@@ -8,7 +8,7 @@ class Kemudi extends Model
 {
     protected $table = 'kemudi';
 
-    protected $fillable = array('id_type', 'steering_gear_type', 'radius_putar');
+    protected $fillable = array('id_type', 'steering_gear_type', 'radius_putar','jenisKemudi','kolomKemudi','posisiStir');
 
     
     public function type(){

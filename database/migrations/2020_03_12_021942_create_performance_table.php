@@ -23,6 +23,8 @@ class CreatePerformanceTable extends Migration
             $table->string('horse_power', '20');
             $table->string('torsi', '20');
             $table->string('fuel', '20')->default('bensin');
+            $table->string('konsumsiBBMKota', '20')->nullable();
+            $table->string('konsumsiBBMTol', '20')->nullable();
             $table->timestamps();
         });
     }

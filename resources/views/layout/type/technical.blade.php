@@ -49,6 +49,18 @@
                                         <td>Jenis Bahan Bakar</td>
                                         <td>{{$performance->fuel}}</td>
                                     </tr>
+                                    @if($performance->konsumsiBBMKota != null)
+                                        <tr>
+                                            <td>Konsumsi BBM Dalam Kota</td>
+                                            <td>{{$performance->konsumsiBBMKota}} kmpl</td>
+                                        </tr>
+                                    @endif
+                                    @if($performance->konsumsiBBMTol != null)
+                                        <tr>
+                                            <td>Konsumsi BBM Dalam Kota</td>
+                                            <td>{{$performance->konsumsiBBMTol}} kmpl</td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         @endforeach
@@ -102,6 +114,12 @@
                                         <td>Berat Bersih</td>
                                         <td>{{$capacity->berat_bersih}} kg</td>
                                     </tr>
+                                    @if($capacity->berat_kotor != null)
+                                        <tr>
+                                            <td>Berat Kotor</td>
+                                            <td>{{$capacity->berat_kotor}} kg</td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         @endforeach
@@ -123,6 +141,13 @@
                                         <td>Suspensi belakang</td>
                                         <td>{{$suspensi->suspensi_belakang}}</td>
                                     </tr>
+                                    <!-- tidak menampilkan data yang null -->
+                                    @if($suspensi->shockBreaker != null)
+                                        <tr>
+                                            <td>Jenis ShockBreaker</td>
+                                            <td>{{$suspensi->shockBreaker}}</td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                     </table>
                     @endforeach
@@ -144,10 +169,12 @@
                                         <td>Jenis Transmisi</td>
                                         <td>{{$transmisi->transmisi}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Jenis Penggerak</td>
-                                        <td>{{$transmisi->penggerak}}</td>
-                                    </tr>
+                                    @if($transmisi->penggerak != null)
+                                        <tr>
+                                            <td>Jenis Penggerak</td>
+                                            <td>{{$transmisi->penggerak}}</td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                     </table>
                     @endforeach
@@ -177,10 +204,12 @@
                                         <td>Sistem suplai bahan bakar</td>
                                         <td>{{$detail->suplai_bahan_bakar}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Mesin</td>
-                                        <td>{{$detail->mesin}}</td>
-                                    </tr>
+                                    @if($detail->mesin != null)
+                                        <tr>
+                                            <td>Mesin</td>
+                                            <td>{{$detail->mesin}}</td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                     </table>
                     @endforeach
@@ -194,6 +223,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        @if($velg->ukuranVelgAlloy != null)
+                                            <td>Ukuran Velg Alloy</td>
+                                            <td>{{$velg->ukuranVelgAlloy}} inch</td>
+                                        @endif
+                                    </tr>
                                     <tr>
                                         <td>Ukuran Ban</td>
                                         <td>{{$velg->ukuran}}</td>
@@ -219,14 +254,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @if($kemudi->jenisKemudi != null)
+                                    <tr>
+                                        <td>Jenis Kemudi</td>
+                                        <td>{{$kemudi->jenisKemudi}}</td>
+                                    </tr>
+                                    @endif
+                                    @if($kemudi->jenisKemudi != null)
+                                        <tr>
+                                            <td>Kolom Kemudi</td>
+                                            <td>{{$kemudi->kolomKemudi}}</td>
+                                        </tr>
+                                    @endif
                                     <tr>
                                         <td>Steering Gear Type</td>
                                         <td>{{$kemudi->steering_gear_type}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Radius Putas</td>
+                                        <td>Radius Putar</td>
                                         <td>{{$kemudi->radius_putar}} m</td>
                                     </tr>
+                                    @if($kemudi->posisiStir != null)
+                                        <tr>
+                                            <td>Pengaturan Posisi Stir</td>
+                                            <td>{{$kemudi->posisiStir}}</td>
+                                        </tr>
+                                    @endif
                                 </tbody>
                     </table>
                     @endforeach

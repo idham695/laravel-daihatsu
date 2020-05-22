@@ -8,7 +8,7 @@ class Suspension extends Model
 {
     protected $table = "suspensi";
 
-    protected $fillable = array('id_type', 'suspensi_depan', 'suspensi_belakang');
+    protected $fillable = array('id_type', 'suspensi_depan', 'suspensi_belakang','shockBreaker');
 
     
     public function type(){

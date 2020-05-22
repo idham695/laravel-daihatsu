@@ -20,6 +20,7 @@ class CreateVelgBanTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->string('ukuran','30');
+            $table->string('ukuranVelgAlloy','10')->nullable();
             $table->string('jenis','10');
             $table->string('ukuran_velg','5');
             $table->timestamps();

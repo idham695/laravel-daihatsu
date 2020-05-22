@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-md-6 offset-md-1 color">
                     <h3>Warna Daihatsu {{$products->name}}</h3>
-                    <p>{{$products->name}} tersedia dalam  @foreach($c as $color){{$color->color_count}} @endforeach  warna yang berbeda yaitu @foreach($products->color as $color){{$color->color_name}}@endforeach </p>
+                    <p style="text-align: justify;">{{$products->name}} tersedia dalam  @foreach($c as $color){{$color->color_count}} @endforeach  warna yang berbeda yaitu @foreach($products->color as $color){{$color->color_name}}{{$loop->last ? '' : ', '}}@endforeach </p>
                         <div class="product-color">
                             <div class="d-flex flex-row flex-nowrap">
                                 <div class="colorbox">
@@ -102,6 +102,11 @@
                 </div>
                 @endforeach
         </div>
+    </div>
+    <div class="container ml-5">
+        Sumber : <a href="https://www.oto.com/mobil-baru/daihatsu" class="text-primary mb-3 mt-1" style="display: block;">https://www.oto.com/mobil-baru/daihatsu</a>
+        Sumber : <a href="https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/" class="text-primary mb-3 mt-1" style="display: block;">https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/</a>
+        Sumber : <a href="https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info" class="text-primary mb-3 mt-1" style="display: block;">https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info</a>               
     </div>
 </div>
 @include('layout/icon')

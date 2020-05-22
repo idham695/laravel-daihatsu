@@ -21,6 +21,9 @@ input[type=search]{
     margin-left: 60px;
     font-size: 32px;
 }
+.product-price::-webkit-scrollbar {
+    width: 10px;
+}
 .product-price{
     overflow-x: scroll;
     margin-top: 20px;
@@ -174,6 +177,9 @@ ul{
     margin-right: 20px;
     text-align: center;
 }
+.product-color::-webkit-scrollbar {
+    width: 10px;
+  }
 .product-color{
     overflow-x: scroll;
 }

@@ -21,6 +21,7 @@ class CreateSuspensiTable extends Migration
             ->onUpdate('cascade');
             $table->string('suspensi_depan', '50');
             $table->string('suspensi_belakang', '50');
+            $table->string('shockBreaker', '50')->nullable();
             $table->timestamps();
         });
     }

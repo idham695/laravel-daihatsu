@@ -19,6 +19,9 @@ class CreateKemudiTable extends Migration
             $table->foreign('id_type')->references('id')->on('type')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->string('jenisKemudi', '100')->nullable();
+            $table->string('kolomKemudi', '50')->nullable();
+            $table->enum('posisiStir', ['Ya','Tidak'])->nullable();
             $table->string('steering_gear_type', '50');
             $table->float('radius_putar');
             $table->timestamps();

@@ -14,7 +14,7 @@ class KenyamananController extends Controller
      */
     public function index()
     {
-        $kenyamanan = Kenyamanan::orderBy('id')->select('id','id_type', 'lampuBagasi')->get();
+        $kenyamanan = Kenyamanan::orderBy('id')->get();
 
         return response()->json([
             'error' => false,

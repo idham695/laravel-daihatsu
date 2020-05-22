@@ -9,7 +9,7 @@ class VelgBan extends Model
     
     protected $table = "velg_ban";
 
-    protected $fillable = array('id_type', 'ukuran', 'jenis', 'ukuran_velg');
+    protected $fillable = array('id_type', 'ukuran', 'jenis', 'ukuran_velg','ukuranVelgAlloy');
 
     public function type(){
         return $this->belongsTo(Type::class,'id_type');

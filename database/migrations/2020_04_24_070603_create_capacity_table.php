@@ -30,6 +30,7 @@ class CreateCapacityTable extends Migration
             $table->integer('jarak_pijak_roda_belakang');           
             $table->integer('jumlah_pintu');           
             $table->integer('berat_bersih');           
+            $table->integer('berat_kotor')->nullable();           
             $table->timestamps();
         });
     }

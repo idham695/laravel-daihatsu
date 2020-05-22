@@ -20,7 +20,7 @@ class CreateTransmisiTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->integer('girbox');
-            $table->string('penggerak');
+            $table->string('penggerak')->nullable();
             $table->string('transmisi');
             $table->timestamps();
         });

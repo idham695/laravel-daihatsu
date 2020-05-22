@@ -23,7 +23,7 @@ class CreateDetailMesinTable extends Migration
             $table->string('katup_per_silinder','50');
             $table->string('konfigurasi_katup','50');
             $table->string('suplai_bahan_bakar','50');
-            $table->string('mesin','50');
+            $table->string('mesin','100')->nullable();
             $table->timestamps();
         });
     }
