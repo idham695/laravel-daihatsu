@@ -1,29 +1,47 @@
-.photo{
+.photo {
     width: 100%;
-	max-width: 300px;
-	margin: 10px;
-	border-radius: 8px;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 8px;
 }
-.image{
+.image {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
 }
-.image-360, .interior, .eksterior{
-    font-size: 28px;
+.image-360 {
     margin-top: 80px;
-	margin-left: 60px;
+    margin-left: 60px;
 }
-
-.image-360 h3, .interior h3, .eksterior h3{
-	margin-left: 10px;
+.interior,
+.eksterior {
+    font-size: 28px;
+    margin-top: 30px;
+    margin-left: 60px;
 }
-.images{
-	display: block;
-	margin-left: 250px;
-	width: 400px;
+.sumber-image {
+    margin-left: 180px;
+}
+.images-wraper {
+    background-color: #fff;
+    height: 300px;
+    padding: 10px 0;
+    border-radius: 8px;
+}
+.image-360 {
+    width: 88%;
+}
+.image-360 h3,
+.interior h3,
+.eksterior h3 {
+    margin-left: 10px;
+}
+.images {
+    margin-left: 250px;
+    width: 400px;
+    margin-top: 10px;
 }
 /* .cloudimage-360 .cloudimage-360-prev, .cloudimage-360 .cloudimage-360-next {
 	padding: 8px;
@@ -67,24 +85,37 @@
 	cursor: default;
 } */
 
-@media screen and (max-width:600px){
-    .image{
+@media screen and (max-width: 600px) {
+    .image {
         margin-left: 0;
     }
-    .eksterior h3, .interior h3, .image-360 h3{
-		font-size: 22px;
+    .sumber-image {
+        margin-left: 30px;
     }
-    .photo, .cloudimage-360{
-		margin: 10px 0;
-		max-width: 500px;
-	}
-	.image-360, .interior, .eksterior {
-		margin-left: 10px
-	}
-	.images{
-		margin-left: 10px;
-	}
-	.image-360 h3, .interior h3, .eksterior h3{
-		margin-left: 0;
-	}
+    .image-360 {
+        width: 97%;
+    }
+    .eksterior h3,
+    .interior h3,
+    .image-360 h3 {
+        font-size: 22px;
+    }
+    .photo,
+    .cloudimage-360 {
+        margin: 10px 0;
+        max-width: 500px;
+    }
+    .image-360,
+    .interior,
+    .eksterior {
+        margin-left: 10px;
+    }
+    .images {
+        margin-left: 10px;
+    }
+    .image-360 h3,
+    .interior h3,
+    .eksterior h3 {
+        margin-left: 0;
+    }
 }

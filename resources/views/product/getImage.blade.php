@@ -6,22 +6,24 @@
         <div class="image">
                 <div class="image-360">
                     <h3>Gambar 360 Daihatsu {{$products->name}}</h3>
-                                <div class="images">
-                                    <!-- semua gambar yang dimasukan ke 360 harus sama -->
-                                    <div
-                                    @foreach($image as $images)
-                                    class="cloudimage-360"
-                                    data-folder="{{asset('/img/'.$images->name)}}"
-                                    data-filename="/{{$images->name}}-{index}{{$images->extension}}"
-                                    @foreach($count as $image)
-                                    data-amount="{{$image->image_count}}"
-                                    @endforeach
-                                    data-speed=100
-                                    style="cursor: ew-resize;"
-                                    @endforeach
-                                    >
-                                    <!-- <button class="cloudimage-360-prev"></button>
-                                    <button class="cloudimage-360-next"></button> -->
+                    <!-- <a href="/product/addImage/{{$products->id}}" class="btn btn-primary">Add 360 Image</a> -->
+                                <div class="images-wraper">
+                                    <div class="images">
+                                        <!-- semua gambar yang dimasukan ke 360 harus sama -->
+                                        @forelse($products->photo as $images)
+                                        <div
+                                        class="cloudimage-360"
+                                        data-folder="{{asset('/img/'.$images->name)}}"
+                                        data-filename="/{{$images->name}}-{index}{{$images->extension}}"
+                                        data-speed=30
+                                        data-amount=35
+                                        >
+                                        @empty
+                                        <div class="text-center mt-auto">
+                                            <h4>Gambar 360 Tidak ada</h4>
+                                        </div>
+                                        @endforelse
+                                        </div>
                                     </div>
                                 </div>
                 </div>
@@ -39,7 +41,7 @@
                         @endforeach
                 </div>
         </div>
-        <div class="ml-5">
+         <div class="sumber-image">
                 Sumber : <a href="https://www.oto.com/mobil-baru/daihatsu" class="text-primary mb-3 mt-1" style="display: block;">https://www.oto.com/mobil-baru/daihatsu</a>
                 Sumber : <a href="https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/" class="text-primary mb-3 mt-1" style="display: block;">https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/</a>
                 Sumber : <a href="https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info" class="text-primary mb-3 mt-1" style="display: block;">https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info</a>               
@@ -48,5 +50,4 @@
 
 @include('layout/icon')
 @include('layout/footercomp')
-@include('layout/sidebar')
 @include('layout/footer')

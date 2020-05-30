@@ -1,42 +1,44 @@
-.tipe{
-    margin-top: 80px;
+.tipe {
+    margin-top: 100px;
 }
-.tipe h1{
+.tipe h1 {
     font-size: 32px;
 }
-.teknical h3, .feature h3{
+.teknical h3,
+.feature h3,
+.varian h3 {
     margin-top: 20px;
     font-size: 24px;
 }
-.nav-link{
+.nav-link {
     padding: 10px 5px;
     margin: 0 2px;
 }
-.content{
+.content {
     height: 300px;
     overflow-y: scroll;
     background-color: #fff;
 }
-.feature{
+.feature {
     margin-bottom: 30px;
 }
-td{
+td {
     width: 50%;
 }
-.nav-tabs .nav-item{
+.nav-tabs .nav-item {
     display: inline;
 }
-.nav-tabs .nav-link{
+.nav-tabs .nav-link {
     background-color: white;
     color: black;
 }
-.nav-tabs .nav-link.active{
+.nav-tabs .nav-link.active {
     background-color: #0497cc;
     color: white;
     border: none;
     border: 1px solid #0497cc;
 }
-.card-type{
+.card-type {
     min-width: 200px;
     min-height: 200px;
     border-radius: 8px;
@@ -44,24 +46,24 @@ td{
     padding: 30px 10px;
     margin-right: 20px;
 }
-.card-type:hover{
+.card-type:hover {
     border: 1px solid #0497cc;
 }
 
-.card-type h4{
+.card-type h4 {
     text-align: center;
     font-size: 18px;
     margin-top: 10px;
 }
-.kolom{
+.kolom {
     font-size: 14px;
     font-weight: 200;
 }
-.card-type strong{
+.card-type strong {
     font-size: 14px;
     font-weight: 400;
 }
-.body{
+.body {
     margin-top: 10px;
 }
 .angsur {
@@ -69,7 +71,7 @@ td{
     width: 200px;
     height: 200px;
     perspective: 1000px;
-  }
+}
 .angsuran {
     position: relative;
     width: 100%;
@@ -77,46 +79,47 @@ td{
     text-align: center;
     transition: transform 0.5s;
     transform-style: preserve-3d;
-  }
-  
-  .angsur:hover .angsuran {
+}
+
+.angsur:hover .angsuran {
     transform: rotateY(180deg);
-  }
-  
-  .angsuran-front, .angsuran-back {
+}
+
+.angsuran-front,
+.angsuran-back {
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-  }
-  .angsuran-back {
+}
+.angsuran-back {
     color: white;
     background-color: white;
     transform: rotateY(180deg);
-  }
-  .button{
+}
+.button {
     margin-top: 80px;
     background-color: #ebedf0;
     border: 1px solid transparent;
     color: #007bff;
     border-radius: 8px;
     padding: 0.2rem 2.75rem;
-  }
-  .button:hover{
+}
+.button:hover {
     background-color: #007bff;
     color: white;
-  }
-@media screen and (max-width: 600px){
-.nav-link{
-    font-size: 12px;
-    padding: 5px 2px;
-    margin: 0 2px;
 }
-table tr td{
-    font-size: 12px;
-}
-.type-spec{
-    overflow-x: scroll;
-}
+@media screen and (max-width: 600px) {
+    .nav-link {
+        font-size: 12px;
+        padding: 5px 2px;
+        margin: 0 2px;
+    }
+    table tr td {
+        font-size: 12px;
+    }
+    .type-spec {
+        overflow-x: scroll;
+    }
 }

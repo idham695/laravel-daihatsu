@@ -1,7 +1,8 @@
-html, body{
-  background-color: #dddddd;
-  overflow-x: hidden;
-  width: 100%;
+html,
+body {
+    background-color: #dddddd;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* ::-webkit-scrollbar {
@@ -11,69 +12,73 @@ html, body{
 
 /* Track  */
 ::-webkit-scrollbar-track {
-  box-shadow: inherit 0 0 5px grey; 
-  border-radius: 10px;
+    box-shadow: inherit 0 0 5px grey;
+    border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: grey; 
-  border-radius: 10px;
-} 
+    background: grey;
+    border-radius: 10px;
+}
 /* navbar */
 
-
+.product-detail {
+    color: black;
+}
+.product-detail:hover {
+    color: black;
+}
 .navbar {
-  box-shadow: 0 2px rgba(0, 0, 0, 0.5);
-  background-color: white;
-  z-index: 1;
-  width: 100vw;
-
+    box-shadow: 0 2px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    z-index: 1;
+    width: 100vw;
 }
-.navbar-brand{
+/* .navbar-brand {
     margin-left: 30px;
-}
+} */
 .navbar-brand img {
     width: 200px;
     margin-top: 6px;
 }
-.subsidebar a:hover{
-  text-decoration: none;
+.subsidebar a:hover {
+    text-decoration: none;
 }
-.link{
-  color: black;
-  padding-top: 10px;
-  height: 100%;
-  display: block;
-  font-size: 12px;
-  transition: 0.3s;
+.link {
+    color: black;
+    padding-top: 10px;
+    height: 100%;
+    display: block;
+    font-size: 12px;
+    transition: 0.3s;
 }
-.link::after{
-  height: 1px;
-  margin-top: 10px;
-  content: '';
-  display: block;
-  width: 250px;
-  background-color: #545454;
+.link::after {
+    height: 1px;
+    margin-top: 10px;
+    content: "";
+    display: block;
+    width: 250px;
+    background-color: #545454;
 }
-.link:last-child::after{
-  height: 1px;
-  margin-top: 10px;
-  content: '';
-  display: none;
-  width: 250px;
+.link:last-child::after {
+    height: 1px;
+    margin-top: 10px;
+    content: "";
+    display: none;
+    width: 250px;
 }
-.disabled{
-  pointer-events: none;
-  transform: scale(1);
+.disabled {
+    pointer-events: none;
+    transform: scale(1);
 }
-a:hover{
-  color: currentColor;
+a:hover {
+    color: currentColor;
 }
 .sidenav::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
-.sidenav{
+.sidenav {
     height: 100%;
     background-color: white;
     width: 0;
@@ -83,7 +88,7 @@ a:hover{
     overflow-x: hidden;
     padding-top: 60px;
     z-index: 10;
-  }
+}
 
 .main {
     cursor: pointer;
@@ -92,10 +97,10 @@ a:hover{
     margin-top: -2px;
     text-decoration: none;
 }
-.main :hover{
-  color: #dddd;
-} 
-  .insidenav{
+.main :hover {
+    color: #dddd;
+}
+.insidenav {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 14px;
@@ -103,24 +108,24 @@ a:hover{
     display: block;
     text-align: left;
     cursor: pointer;
-  }
-  .insidenav::after{
+}
+.insidenav::after {
     height: 1px;
     margin-top: 10px;
-    content: '';
+    content: "";
     display: block;
     width: 250px;
     background-color: black;
-  }
-  .insidenav:last-child::after{
+}
+.insidenav:last-child::after {
     height: 1px;
     margin-top: 10px;
-    content: '';
+    content: "";
     display: none;
     width: 250px;
-  }
+}
 
-  .closebtn{
+.closebtn {
     text-decoration: none;
     position: absolute;
     top: 0;
@@ -129,157 +134,159 @@ a:hover{
     margin-left: 50px;
     color: black;
     cursor: pointer;
-  }
-  .id{
+}
+.id {
     display: block;
     transition: 0.3s;
-  }
-  .text{
+}
+.text {
     text-align: left;
-  }
+}
 
 /* product */
 .card {
-  margin-top: 30px;
-  transition: transform .2s;
-  box-shadow: 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+    transition: transform 0.2s;
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.5);
 }
 .card:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
+    color: blue;
 }
+/* .card-title-product:hover {
+    color: blue;
+} */
 .products {
-  width: 100%;
-  padding-top: 10px;
-  margin-left: 60px;
+    width: 100%;
+    padding-top: 10px;
+    margin-left: 60px;
 }
-.informasi h1{
-  font-size: 30px;
+.informasi h1 {
+    font-size: 30px;
 }
-.a{
-  text-align: justify;
-  font-size: 14px;
-  width: 90%;
+.a {
+    text-align: justify;
+    font-size: 14px;
+    width: 90%;
 }
-
 
 /* footer */
 .footer {
-  background-color: #b0afac;
-  margin-top: auto;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   padding: 10px;
-   text-align: center;
+    background-color: #b0afac;
+    margin-top: auto;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
 }
 
 /* utility */
-.utility{
-  opacity: 0.1;
+.utility {
+    opacity: 0.1;
 }
 .icon {
-  margin-top: 30px;
-  position: fixed;
-  right: 5vw;
-  z-index: 10;
-  bottom: 5vw;
+    margin-top: 30px;
+    position: fixed;
+    right: 5vw;
+    z-index: 10;
+    bottom: 5vw;
 }
 .icon img {
-  width: 50px;
+    width: 50px;
 }
 .feather {
-  width: 30px;
-  height: 30px;
-  color: #bbbbbb;
-  cursor: pointer;
-  margin-top: 6px;
+    width: 30px;
+    height: 30px;
+    color: #bbbbbb;
+    cursor: pointer;
+    margin-top: 6px;
 }
 .feather:not(:last-child) {
-  margin-right: 10px;
+    margin-right: 10px;
 }
-.iconsidebar{
-  position: absolute;
-  right: 40px;
-  cursor: pointer;
+.iconsidebar {
+    position: absolute;
+    right: 40px;
+    cursor: pointer;
 }
-.subsidebar{
-  padding-left: 32px;
-  cursor: pointer;
-  color: black;
-  display: none;
-  text-decoration: none;
-  transition: 0.3s;
-  background-color: #dddd;
-  padding-bottom: 10px;
+.subsidebar {
+    padding-left: 32px;
+    cursor: pointer;
+    color: black;
+    display: none;
+    text-decoration: none;
+    transition: 0.3s;
+    background-color: #dddd;
+    padding-bottom: 10px;
 }
-.back{
-  margin-top: 10px;
-  font-size: 32px;
-  position: absolute;
-  color: black;
+.back {
+    margin-top: 10px;
+    font-size: 32px;
+    position: absolute;
+    color: black;
 }
-a:hover{
-  color: rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-}
-
-.promo{
-  margin: 30px 0;
-  text-align: center;
+a:hover {
+    color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
 }
 
+.promo {
+    margin: 30px 0;
+    text-align: center;
+}
 
 @media screen and (max-width: 600px) {
-  .navbar-brand {
-    margin-left: 15px;
-  }
-  .icon{
-    right: 3vw;
-    bottom: 12vw;
-  }
-  .navbar-brand img {
-    width: 150px;
-  }
-  .main {
-    font-size: 20px;
-    margin-bottom: 2px;
-  }
-  .feather {
-    margin-bottom: -3px;
-    margin-right: -10px;
-  }
-  .footer {
-    font-size: 14px;
-  }
-  .link{
-    font-size: 12px;
-  }
-  .insidenav{
-    font-size: 12px;
-  }
+    .navbar-brand {
+        margin-left: 15px;
+    }
+    .icon {
+        right: 3vw;
+        bottom: 12vw;
+    }
+    .navbar-brand img {
+        width: 150px;
+    }
+    .main {
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+    .feather {
+        margin-bottom: -3px;
+        margin-right: -10px;
+    }
+    .footer {
+        font-size: 14px;
+    }
+    .link {
+        font-size: 12px;
+    }
+    .insidenav {
+        font-size: 12px;
+    }
 
-  .card:hover{
-    transform: scale(1);
-  }
-  .products{
-    padding-top: 0;
-    margin-top: 2px;
-    margin-left: 0;
-  }
-  .info{
-    margin-bottom: 100px;
-  }
-  .informasi{
-    margin-top: 10px;
-  }
-  .informasi h1{
-    font-size: 22px;
-  }
-  .a{
-    font-size: 12px;
-    width: 100%;
-  }
-  .col-6{
-    padding-top: 20px;
-  }
+    .card:hover {
+        transform: scale(1);
+    }
+    .products {
+        padding-top: 0;
+        margin-top: 2px;
+        margin-left: 0;
+    }
+    .info {
+        margin-bottom: 100px;
+    }
+    .informasi {
+        margin-top: 10px;
+    }
+    .informasi h1 {
+        font-size: 22px;
+    }
+    .a {
+        font-size: 12px;
+        width: 100%;
+    }
+    .col-6 {
+        padding-top: 20px;
+    }
 }

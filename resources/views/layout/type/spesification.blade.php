@@ -1,5 +1,5 @@
 <div class="feature">
-    <h3>Fitur {{$types->product->name}} {{$types->type}}</h3>
+    <h3>Fitur {{$type->product->name}} {{$type->type}}</h3>
     <ul class="nav nav-tabs tab">
                 <li class="nav-item">
                     <a class="nav-link active" data-toggle="tab" href="#Eksterior">Eksterior</a>
@@ -22,7 +22,7 @@
     </ul>
     <div class="tab-content content">
                     <div class="tab-pane active" id="Eksterior">
-                        @foreach($types->eksterior as $eksterior)
+                        @forelse($type->eksterior as $eksterior)
                                     <table class="table table-lg bg-light">
                                         <thead>
                                             <tr>
@@ -168,10 +168,14 @@
                                             @endif
                                         </tbody>
                                     </table>
-                                @endforeach
+                                @empty
+                                <div class="text-center mt-5">
+                                    <h4>Data Tidak ada</h4>
+                                </div>
+                                @endforelse
                     </div>
                     <div class="tab-pane fade" id="hiburan">
-                        @foreach($types->hiburan as $hiburan)
+                        @forelse($type->hiburan as $hiburan)
                             <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -239,10 +243,14 @@
                                     @endif
                                 </tbody>
                             </table>
-                        @endforeach
+                    @empty
+                    <div class="text-center mt-5">
+                        <h4>Data Tidak ada</h4>
+                    </div>
+                    @endforelse
                     </div>
                     <div class="tab-pane fade" id="keamanan">
-                    @foreach($types->keamanan as $keamanan)
+                    @forelse($type->keamanan as $keamanan)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -288,10 +296,14 @@
                                     @endif
                                 </tbody>
                     </table>
-                    @endforeach
+                    @empty
+                    <div class="text-center mt-5">
+                        <h4>Data Tidak ada</h4>
+                    </div>
+                    @endforelse
                     </div>
                     <div class="tab-pane fade" id="kenyamanan">
-                    @foreach($types->kenyamanan as $kenyamanan)
+                    @forelse($type->kenyamanan as $kenyamanan)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -509,10 +521,14 @@
                                     @endif
                                 </tbody>
                     </table>
-                    @endforeach
+                    @empty
+                    <div class="text-center mt-5">
+                        <h4>Data Tidak ada</h4>
+                    </div>
+                    @endforelse
                     </div>
                     <div class="tab-pane fade" id="keselamatan">
-                    @foreach($types->keselamatan as $keselamatan)
+                    @forelse($type->keselamatan as $keselamatan)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -642,10 +658,14 @@
                                     @endif
                                 </tbody>
                     </table>
-                    @endforeach
+                    @empty
+                    <div class="text-center mt-5">
+                        <h4>Data Tidak ada</h4>
+                    </div>
+                    @endforelse
                     </div>
                     <div class="tab-pane fade" id="lain">
-                    @foreach($types->lain as $lain)
+                    @forelse($type->lain as $lain)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -713,7 +733,11 @@
                                     </tr>
                                 </tbody>
                     </table>
-                    @endforeach
+                     @empty
+                    <div class="text-center mt-5">
+                        <h4>Data Tidak ada</h4>
+                    </div>
+                    @endforelse
                     </div>
         </div>
 </div>

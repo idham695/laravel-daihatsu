@@ -1,5 +1,5 @@
 <div class="teknical">
-            <h3>Spesifikasi Teknik {{$types->product->name}} {{$types->type}}</h3>
+            <h3>Spesifikasi Teknik {{$type->product->name}} {{$type->type}}</h3>
             <ul class="nav nav-tabs tab">
                 <li class="nav-item">
                     <a class="nav-link active" data-toggle="tab" href="#performance">Performance</a>
@@ -25,7 +25,7 @@
             </ul>
             <div class="tab-content content">
                     <div class="performance tab-pane active" id="performance">
-                        @foreach($types->performance as $performance)
+                        @foreach($type->performance as $performance)
                             <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -66,7 +66,7 @@
                         @endforeach
                     </div>
                     <div class="capacity tab-pane fade" id="capacity">
-                    @foreach($types->capacity as $capacity)
+                    @foreach($type->capacity as $capacity)
                             <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -125,7 +125,7 @@
                         @endforeach
                     </div>
                     <div class="suspensi tab-pane fade" id="suspensi">
-                    @foreach($types->suspensi as $suspensi)
+                    @foreach($type->suspensi as $suspensi)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -153,7 +153,7 @@
                     @endforeach
                     </div>
                     <div class="transmisi tab-pane fade" id="transmisi">
-                    @foreach($types->transmisi as $transmisi)
+                    @foreach($type->transmisi as $transmisi)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -180,7 +180,7 @@
                     @endforeach
                     </div>
                     <div class="detail tab-pane fade" id="detailMesin">
-                    @foreach($types->detail as $detail)
+                    @foreach($type->detail as $detail)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -215,7 +215,7 @@
                     @endforeach
                     </div>
                     <div class="velg tab-pane fade" id="velg">
-                    @foreach($types->velg as $velg)
+                    @foreach($type->velg as $velg)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>
@@ -246,7 +246,7 @@
                     @endforeach
                     </div>
                     <div class="kemudi tab-pane fade" id="kemudi">
-                    @foreach($types->kemudi as $kemudi)
+                    @foreach($type->kemudi as $kemudi)
                     <table class="table table-lg bg-light">
                                 <thead>
                                     <tr>

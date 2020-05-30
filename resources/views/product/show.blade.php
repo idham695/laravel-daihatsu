@@ -1,7 +1,7 @@
 @extends('layout/header')
 @section('title', "Dashboard")
 @include('layout/navbar')
-<div class="banner">
+<div class="banner mt-5">
     <img src="{{asset('/img/'. $products->banner)}}" alt="">
     <div class="container">
         <div class="banner-teks">
@@ -12,7 +12,7 @@
         </div> -->
         <div class="banner-button">
                     <a href="https://api.whatsapp.com/send?phone=+628881260028" class="qta u">Promo Menarik</a>
-                    <a href="/product/image/{{$products->id}}" class="qta u">Detail Gambar</a>
+                    <a href="/product/photo/{{$products->id}}" class="qta u">Detail Gambar</a>
         </div>
     </div>
 </div>
@@ -78,7 +78,7 @@
                 @foreach($products->type as $type)
                 <div class="catalog">
                     <div class="catalog-body">
-                            <p class="type">{{$type->type}} | Rp. {{$type->price}} juta</p>
+                            <a href="/type/{{$type->id}}" class="text-dark"><p class="type">{{$type->type}} | Rp. {{$type->price}} juta</p></a>
                         @foreach($type->down as $down)
                         <div class="d-flex justify-content-between">
                             <p class="column">DP(Mulai Dari)</p>
@@ -103,13 +103,12 @@
                 @endforeach
         </div>
     </div>
-    <div class="container ml-5">
-        Sumber : <a href="https://www.oto.com/mobil-baru/daihatsu" class="text-primary mb-3 mt-1" style="display: block;">https://www.oto.com/mobil-baru/daihatsu</a>
-        Sumber : <a href="https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/" class="text-primary mb-3 mt-1" style="display: block;">https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/</a>
-        Sumber : <a href="https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info" class="text-primary mb-3 mt-1" style="display: block;">https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info</a>               
+    <div class="sumber">
+            Sumber : <a href="https://www.oto.com/mobil-baru/daihatsu" class="text-primary mb-3 mt-1" style="display: block;">https://www.oto.com/mobil-baru/daihatsu</a>
+            Sumber : <a href="https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/" class="text-primary mb-3 mt-1" style="display: block;">https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/</a>
+            Sumber : <a href="https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info" class="text-primary mb-3 mt-1" style="display: block;">https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info</a>               
     </div>
 </div>
 @include('layout/icon')
 @include('layout/footercomp')
-@include('layout/sidebar')
 @include('layout/footer')

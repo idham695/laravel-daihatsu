@@ -17,7 +17,8 @@ Route::get('/', 'TypeController@index');
 Route::get('/types', 'TypeController@getType');
 Route::get('/products', 'ProductController@index');
 Route::post('/searchProduct', 'ProductController@searchProduct');
-Route::get('/product/image/{id}', 'ProductController@getImageProducts');
+Route::get('/product/photo/{id}', 'Product_ImageController@show');
+// Route::get('/product/addImage/{id}', 'ProductController@addImageProducts');
 Route::post('/image_interior/{id}', 'Product_Image_InteriorController@update');
 Route::post('/image_eksterior/{id}', 'Product_Image_EksteriorController@update');
 Route::post('/image/{id}', 'Product_ImageController@update');
@@ -62,7 +63,7 @@ Route::resource('/image_eksterior', 'Product_Image_EksteriorController')->except
     'update','create','edit'
 ]);
 Route::resource('/image', 'Product_ImageController')->except([
-    'update','create','edit'
+    'show','update','create','edit'
 ]);
 Route::resource('/down', 'Down_PaymentController')->except([
     'show','create','edit'

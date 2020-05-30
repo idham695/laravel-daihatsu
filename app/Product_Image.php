@@ -8,7 +8,7 @@ class Product_Image extends Model
 {
     protected $table = "product_image";
 
-    protected $fillable = array('id_product', 'image','name','extension');
+    protected $fillable = array('id_product','image','name','extension');
 
     public $timestamps = true;
 

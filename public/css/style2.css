@@ -1,22 +1,25 @@
 /* search page */
-input[type=search]{
+input[type="search"] {
     width: 60%;
     margin-top: 5px;
     background-color: white;
     border-radius: 8px;
     padding: 5px 40px;
-    background-image: url('../img/search-26252.png');
-    background-position: 8px; 
+    background-image: url("../img/search-26252.png");
+    background-position: 8px;
     background-repeat: no-repeat;
     background-size: 20px;
     border: 2px solid #e1e2e3;
     margin-left: 30px;
 }
-.search{
+.search {
     margin-top: 70px;
 }
+.sumber {
+    margin-left: 30px;
+}
 /* banner */
-.type-price{
+.type-price {
     margin-top: 20px;
     margin-left: 60px;
     font-size: 32px;
@@ -24,28 +27,37 @@ input[type=search]{
 .product-price::-webkit-scrollbar {
     width: 10px;
 }
-.product-price{
+.product-price {
     overflow-x: scroll;
     margin-top: 20px;
     margin-left: 60px;
     margin-bottom: 20px;
 }
-.catalog-body{
+.catalog-body {
     padding: 10px;
     border-radius: 8px;
 }
-.catalog{
+.catalog {
     min-height: 200px;
     min-width: 400px;
     margin-right: 20px;
     background-color: white;
     border-radius: 8px;
 }
-.type{
+.type {
     font-size: 18px;
     font-weight: 500;
 }
-.column{
+.type:hover {
+    color: blue;
+}
+.type-link {
+    font-size: 14px;
+}
+.type-link:hover {
+    color: blue;
+}
+.column {
     font-size: 16px;
     color: darkgrey;
     font-weight: 100;
@@ -54,10 +66,11 @@ input[type=search]{
     font-size: 16px;
     font-weight: 400;
 }
-.price, .search{
+.price,
+.search {
     margin-left: 2px;
 }
-.banner-teks{
+.banner-teks {
     top: 270px;
     margin-left: 65px;
     position: absolute;
@@ -65,7 +78,7 @@ input[type=search]{
     font-size: 44px;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
 }
-.banner-price{
+.banner-price {
     top: 320px;
     margin-left: 65px;
     position: absolute;
@@ -74,12 +87,12 @@ input[type=search]{
     text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
     filter: contrast(100%);
 }
-.banner-button{
+.banner-button {
     top: 320px;
     position: absolute;
     margin-left: 65px;
 }
-.qta{
+.qta {
     display: block;
     margin-top: 10px;
     background-color: #007bff;
@@ -90,51 +103,51 @@ input[type=search]{
     text-align: center;
     border-radius: 0.25rem;
 }
-.qta:hover{
+.qta:hover {
     color: white;
     background-color: #0069d9;
     border-color: #0062cc;
 }
-.banner img{
+.banner img {
     position: relative;
     width: 100%;
     max-height: 600px;
 }
 
 /* kelebihan */
-.kelebihan{
+.kelebihan {
     width: 100%;
     padding-top: 10px;
     margin-left: 60px;
 }
-.kelebihan h1{
+.kelebihan h1 {
     font-size: 30px;
 }
-.kelebihan h3{
+.kelebihan h3 {
     margin-top: 10px;
     font-size: 22px;
 }
-.plus-minus{
+.plus-minus {
     margin-top: 20px;
     margin-left: 20px;
 }
-.bg-hijau{
+.bg-hijau {
     background-color: rgba(0, 255, 0, 0.1);
     height: 250px;
 }
-.bg-merah{
+.bg-merah {
     background-color: rgba(255, 0, 0, 0.1);
     height: 250px;
 }
-ul{
+ul {
     list-style: none;
     list-style-position: outside;
 }
-.hijau::before{
+.hijau::before {
     content: "\2022";
     color: green;
     font-weight: bold;
-    display: inline-block; 
+    display: inline-block;
     width: 1em;
     margin-left: -1em;
 }
@@ -146,111 +159,115 @@ ul{
     width: 1em;
     margin-left: -1em;
 } */
-.hijau, .merah{
+.hijau,
+.merah {
     font-size: 16px;
     font-weight: 200;
     text-align: justify;
     margin-left: -20px;
 }
 
-
 /* color product */
-.color h3{
+.color h3 {
     text-align: center;
 }
-.color p{
+.color p {
     font-size: 16px;
     font-weight: 400;
 }
-.color-product{
+.color-product {
     width: 120px;
     height: 100px;
     border-radius: 8px;
     text-align: left;
     margin-right: 20px;
 }
-.colorbox{
+.colorbox {
     display: inline-flex;
 }
-.name-color{
+.name-color {
     margin-top: 5px;
     margin-right: 20px;
     text-align: center;
 }
 .product-color::-webkit-scrollbar {
     width: 10px;
-  }
-.product-color{
+}
+.product-color {
     overflow-x: scroll;
 }
 
-
-@media screen and (max-width:600px){
-    input[type=search]{
+@media screen and (max-width: 600px) {
+    input[type="search"] {
         width: 50%;
         margin-left: 0;
     }
     /* banner */
-    .price{
+    .price {
         font-size: 16px;
     }
-    .banner-teks{
+    .banner-teks {
         top: 140px;
         margin-left: 30px;
+        margin-top: -10px;
     }
-    .banner-price{
+    .banner-price {
         top: 180px;
         margin-left: 30px;
     }
-    .banner-price h5{
+    .banner-price h5 {
         font-size: 12px;
     }
-    .banner-teks h2{
+    .banner-teks h2 {
         font-size: 26px;
     }
-    .banner-button{
+    .banner-button {
         top: 180px;
         margin-left: 30px;
     }
-    .banner-button{
+    .banner-button {
         margin-left: 10px;
-        margin-top: 5px;
+        margin-top: -5px;
         top: 160px;
     }
-    .qta{
-        padding: 0.250rem 0.50rem;
+    .sumber {
+        margin-left: 30px;
+    }
+    .qta {
+        padding: 0.25rem 0.5rem;
         font-size: 14px;
     }
-    .banner-teks{
+    .banner-teks {
         margin-left: 10px;
     }
-    .banner-teks h2{
+    .banner-teks h2 {
         font-size: 22px;
     }
     /* kelebihan */
-    .kelebihan{
+    .kelebihan {
         padding-top: 0;
         margin-top: 2px;
         margin-left: 0;
     }
-    .kelebihan h1{
+    .kelebihan h1 {
         font-size: 22px;
     }
-    .kelebihan h3{
+    .kelebihan h3 {
         font-size: 18px;
     }
-    .plus-minus{
+    .plus-minus {
         margin: 0;
     }
-    .bg-hijau, .bg-merah{
+    .bg-hijau,
+    .bg-merah {
         margin-top: 20px;
     }
-    .product-price, .type-price{
+    .product-price,
+    .type-price {
         margin-left: 0;
     }
     /* color */
-    .color h3{
+    .color h3 {
         font-size: 18px;
     }
-
 }

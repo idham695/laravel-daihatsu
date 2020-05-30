@@ -20,18 +20,30 @@ class ProductController extends Controller
 
         return view('index', compact('product'));
     }
-    public function getImageProducts($id){
-        // untuk sidebar
-        $type = Product::with('type')->orderBy('id','desc')->get();
-        $product = Product::orderBy('id')->get();
+    // // public function getImageProducts($id){
+    // //     // untuk sidebar
+    // //     $type = Product::with('type')->orderBy('id','desc')->get();
+    // //     $image = Product::with('image')->get();
+    // //     // untuk halaman image
+    // //     $products = Product::find($id);
+    // //     // $count = Product::withCount('image')->where('id', $id)->get();
 
-        // untuk halaman image
-        $products = Product::with('interior','eksterior')->find($id); 
-        $image = Product_Image::all();
-        $count = Product::withCount('image')->where('id', $id)->get();
+    // //     //     return response()->json([
+    // //     //     'error' => false,
+    // //     //     'type' => $type
+    // //     // ], 200);
 
-        return view('product.getImage', compact('product','type','products','image','count'));
-    }
+    // //     return view('product.getImage', compact('image','type','products'));
+    // // }
+    // public function addImageProducts($id){
+    //     // untuk sidebar
+    //     $type = Product::with('type')->orderBy('id','desc')->get();
+    //     $product = Product::orderBy('id')->get();
+
+    //     // untuk halaman image
+    //     $products = Product::with('image')->orderBy('id')->get(); 
+    //     return view('product.addImage', compact('product','type','products'));
+    // }
     public function index()
     {
         

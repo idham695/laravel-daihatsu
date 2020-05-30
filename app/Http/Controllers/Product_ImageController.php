@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product_Image;
+use App\Product;
 
 class Product_ImageController extends Controller
 {
@@ -14,11 +15,11 @@ class Product_ImageController extends Controller
      */
     public function index()
     {
-        $image = Product_Image::orderBy('id')->get();
+        $photo = Product::with('photo')->get();
 
         $output = [
-            "message" => "image",
-            "result" => $image
+            "message" => "photo",
+            "result" => $photo
         ];
 
         return response()->json($output, 200);
@@ -29,9 +30,9 @@ class Product_ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Product $product)
     {
-        //
+       
     }
 
     /**
@@ -45,14 +46,16 @@ class Product_ImageController extends Controller
         $input = $request->all();
         $request->validate([
             'id_product' => 'required|exists:product,id',
-            'image' => 'required|file|image|mimes:jpg,jpeg,png,webp|max:2048'
+            'image' => 'required|mimes:jpg,jpeg,png,webp|max:2048',
+            'name' => 'required',
+            'extension' => 'required'
         ]);
-
+        
         $image = new Product_Image();
         $image->id_product = $request->input('id_product');
         $image->name = $request->input('name');
         $image->extension = $request->input('extension');
-        
+
         if ($request->hasFile('image')) {
             $data = $request->file('image');
             $name = $request->input('name');
@@ -78,16 +81,28 @@ class Product_ImageController extends Controller
      */
     public function show($id)
     {
-        $image = Product_Image::find($id);
+          // untuk sidebar
+        $type = Product::with('type')->orderBy('id','desc')->get();
+        // untuk halaman image
+        $products = Product::with('photo','interior','eksterior')->find($id);
+        $count = Product::withCount('photo')->where('id', $id)->get();
+        // $count = Product::withCount('image')->where('id', $id)->get();
 
-        if(!$image) {
-            abort(404);
-        }
+        //     return response()->json([
+        //     'error' => false,
+        //     'type' => $type
+        // ], 200);
 
-        return response()->json([
-            'error' => false,
-            'type' => $image
-        ], 200);
+        return view('product.getImage', compact('type','products','count'));
+
+        // if(!$image) {
+        //     abort(404);
+        // }
+
+        // return response()->json([
+        //     'error' => false,
+        //     'type' => $image
+        // ], 200);
     }
 
     /**
@@ -98,7 +113,7 @@ class Product_ImageController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -121,7 +136,7 @@ class Product_ImageController extends Controller
         $request->validate([
             'id_product' => 'required|exists:product,id',
             'image' => 'required|file|image|mimes:jpeg,png,jpg,webp|max:2048',
-            'extension' => 'rewuired'
+            'extension' => 'required'
         ]);
 
         $image->id_product = $request->input('id_product');

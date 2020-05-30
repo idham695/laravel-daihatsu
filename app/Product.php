@@ -25,7 +25,7 @@ class Product extends Model
     public function interior(){
         return $this->hasMany(Product_Image_Interior::class,'id_product');
     }
-    public function image(){
+    public function photo(){
         return $this->hasMany(Product_Image::class,'id_product');
     }
     public function eksterior(){

@@ -74,12 +74,11 @@ class TypeController extends Controller
         // page
         $performance = Type::with('performance','kemudi','capacity','velg','transmisi','suspensi','detail')->orderBy('id')->get();
         $spesification = Type::with('eksterior','hiburan','lain','kenyamanan','keselamatan','keamanan')->orderBy('id')->get();
-        $down = Down_payment::with('credit')->orderBy('id','desc')->get();
-        $types = Type::with('down')->find($id);
+        $type = Type::with('down')->find($id);
 
         // sidebar
-        $type = Product::with('type')->orderBy('id','desc')->get();
-        $product = Product::orderBy('id')->get();
+        $products = Product::with('type')->find($id);
+        $product = Product::with('type')->orderBy('id')->get();
         // $type = Type::find($id);
 
         // if(!$type) {
@@ -92,7 +91,7 @@ class TypeController extends Controller
         //     'down' => $down
         // ], 200);
 
-        return view('type.show', compact('type','product','types','performance','spesification','down'));
+        return view('type.show', compact('type','product','products','performance','spesification'));
     }
 
     /**
