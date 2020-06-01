@@ -15,9 +15,12 @@
                                         class="cloudimage-360"
                                         data-folder="{{asset('/img/'.$images->name)}}"
                                         data-filename="/{{$images->name}}-{index}{{$images->extension}}"
-                                        data-speed=30
+                                        data-drag-speed=100
+                                        data-speed=100
                                         data-amount=35
                                         >
+                                        <button class="cloudimage-360-prev"></button>
+	                                    <button class="cloudimage-360-next"></button>
                                         @empty
                                         <div class="text-center mt-auto">
                                             <h4>Gambar 360 Tidak ada</h4>
@@ -41,11 +44,11 @@
                         @endforeach
                 </div>
         </div>
-         <div class="sumber-image">
+         <!-- <div class="sumber-image">
                 Sumber : <a href="https://www.oto.com/mobil-baru/daihatsu" class="text-primary mb-3 mt-1" style="display: block;">https://www.oto.com/mobil-baru/daihatsu</a>
                 Sumber : <a href="https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/" class="text-primary mb-3 mt-1" style="display: block;">https://id.priceprice.com/Daihatsu-Gran-Max-BV-23141/specs/</a>
                 Sumber : <a href="https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info" class="text-primary mb-3 mt-1" style="display: block;">https://harga.web.id/info-harga-spesifikasi-lengkap-daihatsu-grand-max-blind-van.info</a>               
-        </div>
+        </div> -->
 </div>
 
 @include('layout/icon')

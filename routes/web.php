@@ -23,6 +23,12 @@ Route::post('/image_interior/{id}', 'Product_Image_InteriorController@update');
 Route::post('/image_eksterior/{id}', 'Product_Image_EksteriorController@update');
 Route::post('/image/{id}', 'Product_ImageController@update');
 
+// Type SoftDelete
+Route::get('types/withsoftdelete','TypeController@typesWithSoftDelete');
+Route::get('types/softdeleted','TypeController@softDeleted');
+Route::patch('/types/{id}','TypeController@restore');
+Route::delete('/types/{id}','TypeController@permanentDeleteSoftDeleted');
+
 Route::resource('/type', 'TypeController')->except([
     'index'
 ]);

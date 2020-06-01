@@ -25,13 +25,12 @@ class TypeController extends Controller
     }
     public function index()
     {
-        $type = Product::with('type')->orderBy('id','desc')->get();
+        $type = Type::with('product')->orderBy('id','desc')->get();
         $product = Product::orderBy('id')->get();
 
         // return response()->json([
         //     'error' => false,
         //     'type' => $type,
-        //     'product' => $product
         // ], 200);
         return view('index', compact('type','product'));
     }
@@ -74,11 +73,11 @@ class TypeController extends Controller
         // page
         $performance = Type::with('performance','kemudi','capacity','velg','transmisi','suspensi','detail')->orderBy('id')->get();
         $spesification = Type::with('eksterior','hiburan','lain','kenyamanan','keselamatan','keamanan')->orderBy('id')->get();
-        $type = Type::with('down')->find($id);
+        $type = Type::with('product')->find($id);
 
         // sidebar
         $products = Product::with('type')->find($id);
-        $product = Product::with('type')->orderBy('id')->get();
+        $product = Type::with('product')->orderBy('id')->get();
         // $type = Type::find($id);
 
         // if(!$type) {
@@ -138,17 +137,62 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        $type = Type::find($id);
+
+        $type = Type::destroy($id);
+        $message = ['message' => 'soft deleted successfully', 'type_id' => $id];
+        return response()->json($message, 200);
+    }
+    //returns both non-deleted and softdeleted
+    public function typesWithSoftDelete()
+    {
+
+        $types = Type::withTrashed()->orderBy('id')->get();
+        return response()->json([
+            'error' => false,
+            'types' => $types
+        ], 200);
+
+    }
+
+    public function softDeleted()
+    {
+        $types = Type::onlyTrashed()->orderBy('id')->get();
+
+        return response()->json([
+            'error' => false,
+            'types' => $types
+        ], 200);
+    }
+
+    public function restore($id)
+    {
+
+        $type = Type::onlyTrashed()->find($id);
         
         if(!$type) {
             abort(404);
         }
+        
+        $type->restore();
 
-        $type->delete();
 
-        $message = ['message' => 'deleted successfully', 'type_id' => $id];
-
+        $message = ['message' => 'restore successfully', 'type_id' => $id];
         return response()->json($message, 200);
-
     }
+
+    public function permanentDeleteSoftDeleted($id)
+    {
+        $type = Type::onlyTrashed()->find($id);
+
+        if(!$type) {
+            abort(404);
+        }
+
+        $type->forceDelete();
+
+
+        $message = ['message' => 'delete permanent successfully', 'type_id' => $id];
+        return response()->json($message, 200);
+    }
+
 }

@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Type extends Model
 {
+    use SoftDeletes;
+    
     protected $table = 'type';
 
     protected $fillable = array('id_product','type','price','desc');
