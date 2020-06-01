@@ -265,6 +265,7 @@ ul {
     .product-price,
     .type-price {
         margin-left: 0;
+        font-size: 22px;
     }
     /* color */
     .color h3 {
